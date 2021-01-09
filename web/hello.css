@@ -1,6 +1,10 @@
-h1:hover
+h1
 {
     text-align: center;
+}
+
+h1:hover
+{
     color: blue;
     animation-duration: 90s;
     animation-name: grow;
