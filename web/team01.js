@@ -3,8 +3,9 @@ var resetTimer = null;
 function clickMe(id)
 {
     var button = document.getElementById(id);
+    alert("Clicked!");
     button.innerHTML = "Thanks for Clicking";
-    resetTimer = setInterval(resetButton, 2500, id);
+    resetTimer = setInterval(resetButton, 5000, id);
 }
 
 function resetButton(id)
@@ -13,3 +14,11 @@ function resetButton(id)
     button.innerHTML = "Click Me";
     clearInterval(resetTimer);
 }
+
+function changeColor(id)
+{
+    var parentDiv = document.getElementById(id).parentElement;
+    console.log(parentDiv.nodeName)
+    parentDiv.style.color = document.getElementById("color").value;
+}
+

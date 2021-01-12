@@ -1,8 +1,3 @@
-div:hover
-{
-    background-color:gray;
-}
-
 .div1:hover p
 {
     font-weight:bold;
