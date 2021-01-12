@@ -1,12 +1,13 @@
 function clickMe(id)
 {
+    console.log(id)
     var button = document.getElementById(id);
-    button.value = "Thanks for Clicking";
+    button.innerHTML = "Thanks for Clicking";
     setInterval(resetButton, 2500, id);
 }
 
 function resetButton(id)
 {
     var button = document.getElementById(id);
-    button.value = "Click Me";
+    button.innerHTML = "Click Me";
 }
