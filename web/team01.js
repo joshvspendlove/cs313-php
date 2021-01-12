@@ -3,7 +3,7 @@ function clickMe(id)
     console.log(id)
     var button = document.getElementById(id);
     button.innerHTML = "Thanks for Clicking";
-    setInterval(resetButton, 2500, id);
+    setTimeout(resetButton(), 2500, id);
 }
 
 function resetButton(id)
