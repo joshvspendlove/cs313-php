@@ -4,7 +4,7 @@ function clickMe(id)
 {
     var button = document.getElementById(id);
     button.innerHTML = "Thanks for Clicking";
-    resetTimer = setInterval(resetButton(), 2500, id);
+    resetTimer = setInterval(resetButton, 2500, id);
 }
 
 function resetButton(id)
