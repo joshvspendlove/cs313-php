@@ -3,17 +3,17 @@ div:hover
     background-color:light-gray;
 }
 
-.div1:hover
+.div1:hover p
 {
     font-weight:bold;
 }
 
-.div2:hover
+.div2:hover p
 {
     font-weight:bold;
 }
 
-.div3:hover
+.div3:hover p
 {
     font-weight:bold;
 }
