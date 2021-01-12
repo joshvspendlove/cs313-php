@@ -18,7 +18,7 @@ function resetButton(id)
 function changeColor(id)
 {
     var parentDiv = document.getElementById(id).parentElement;
-    console.log(parentDiv.nodeName)
+    console.log(parentDiv.id)
     parentDiv.style.color = document.getElementById("color").value;
 }
 
