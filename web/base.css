@@ -1,0 +1,41 @@
+body
+{
+    background-color: gray;
+}
+
+.menu
+{
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.menuLink
+{
+    
+    font-size: 120%;
+    text-decoration: none;
+    color: black;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.menuLink:hover
+{
+    transition: background-color .5s ease;
+    background-color:lightgray;
+}
+
+.card
+{
+    background-color:ghostwhite;
+}
+
+img
+{
+	 max-width:500px;
+}
+
+.active
+{
+	background-color:lightgray;
+}
