@@ -18,7 +18,9 @@
       </nav>
     </div>
     <div class="content">
-      <?php echo "<h1>Coming Soon!</h1>" ?>
+	  <div class="card">
+        <?php echo '<h1 class="centered">Coming Soon!</h1>' ?>
+	  </div>
     </div>
   </body>
 </html>

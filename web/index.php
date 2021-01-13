@@ -18,10 +18,11 @@
       </nav>
     </div>
     <div class="content">
-	  <div class="jumbotron">
-	    <h1>Welcome to my website!</h1>
-		<p>This page is currently under construction. Please view my "Intro" page by clicking the link above or by clicking <a href="../intro.php">here</a>.</p>
-		
+	  <div class="card">
+	    <div class="jumbotron">
+	      <h1>Welcome to my website!</h1>
+	  	  <p>This page is currently under construction. Please view my "Intro" page by clicking the link above or by clicking <a href="../intro.php">here</a>.</p>
+		</div>
     </div>
   </body>
 </html>
