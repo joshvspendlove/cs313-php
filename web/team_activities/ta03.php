@@ -14,7 +14,7 @@ $majors = array( "CS" =>"Computer Science", "WDD" => "Web Design and Development
 
 foreach ($majors as $abrev => $name)
 {
-	echo '<input type="radio" name="major">'.$name.'</input>';
+	echo '<input type="radio" name="major" value="'.$name.'">'.$name.'</input>';
 }
 ?>
 <br>
