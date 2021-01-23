@@ -32,6 +32,7 @@ body
 
 img
 {
+	 width: auto;
 	 max-width:500px;
 }
 

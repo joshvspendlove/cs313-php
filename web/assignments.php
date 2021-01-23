@@ -1,10 +1,7 @@
 <!DOCTYPE html>
 <html lang="en-us">
   <head>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="base.css"/>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <?php require "./header.php"; ?>
     <title>CSE341 Assignments</title>
   </head>
   <body class="container-fluid">
@@ -18,9 +15,18 @@
       </nav>
     </div>
     <div class="content">
-	  <div class="card">
-        <?php echo '<h1 class="centered">Coming Soon!</h1>' ?>
+      <div class="card-deck">
+	<div class="card">
+	  <div class="card-header">
+	    <h1><a href="../week03/store.php">Week 3 Store</a></h1>
 	  </div>
+	</div>
+	<div class="card">
+          <div class="card-header">
+            <h1><a>Week 4</a></h1>
+          </div>
+	</div>
+      </div>
     </div>
   </body>
 </html>
