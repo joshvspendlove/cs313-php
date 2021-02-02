@@ -37,7 +37,7 @@
 
 <?php
 	$book = $_GET['book'];
-	
+	echo $book;	
 	if ($book != null)
 	{
 		echo '<h2>Search Results</h2>';
