@@ -1,3 +1,4 @@
+<h1>Scripture Resources</h1>
 <?php
 	try
 	{
