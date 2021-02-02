@@ -29,7 +29,7 @@
 	}
 
 
-$book = $_GET['book']
+	$book = $_GET['book'];
 	
 	if ($book != null)
 	{
