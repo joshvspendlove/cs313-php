@@ -41,8 +41,9 @@
 	if ($book != null)
 	{
 		echo '<h2>Search Results</h2>';
-		foreach ($db->query('SELECT * FROM public.scriptures WHERE book = ' . $book) as $scripture)
+		foreach ($db->query('SELECT * FROM public.scriptures WHERE book = $book;') as $scripture)
 		{
+			
 			echo '<p><b>' . $scripture['book'] . ' ' . $scripture['chapter'] . ':' . $scripture['verse'] . '</b> - "' . $scripture['content'] . '"';
 			echo '<br/>';
 		}
