@@ -28,7 +28,14 @@
 		echo '<br/>';
 	}
 
+?>
 
+<form method="get">
+<input type="text" name="book"/>
+<input type="submit" value="Submit"/>
+</form>
+
+<?php
 	$book = $_GET['book'];
 	
 	if ($book != null)
