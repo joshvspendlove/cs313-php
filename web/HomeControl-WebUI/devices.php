@@ -8,7 +8,7 @@
   </head>
   <body class="container-fluid">
     <div class="menu">
-      <?php //require './webui-menu.php'; ?>
+      <?php require './webui-menu.php'; ?>
     </div>
     <div class="content">
 	  <div class="card-group">
