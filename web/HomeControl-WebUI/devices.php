@@ -26,12 +26,7 @@
             <h1>Lights</h1>
 		  </div>
 		  <div class="card-body">
-			<?php
-				foreach($db->query("SELECT * FROM public.lights WHERE systemid = '1';") as $light)
-				{
-					echo $light['lightname'] . $row['lightlevel'];
-				}
-			?>			
+						
 		  </div>
 		</div>
 	  </div>
