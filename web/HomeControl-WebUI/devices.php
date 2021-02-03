@@ -3,12 +3,12 @@
 <!DOCTYPE html>
 <html lang="en-us">
   <head>
-    <?php require "../header.php"; ?>
+    <?php include "../header.php"; ?>
     <title>Home Control WebUI</title>
   </head>
   <body class="container-fluid">
     <div class="menu">
-      <?php require './webui-menu.php'; ?>
+      <?php include './webui-menu.php'; ?>
     </div>
     <div class="content">
 	  <div class="card-group">
