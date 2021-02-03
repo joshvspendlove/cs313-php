@@ -22,7 +22,7 @@
 	}
 	
 	$id = $_GET['id'];
-	
+	echo $id;
 	foreach ($db->query("SELECT * FROM public.scriptures WHERE id = '$id'") as $scripture)
 	{
 		echo "<p><b>$scripture['book'] $scripture['chapter']:$scripture['verse']</b> - $scripture['content']</p></br>";
