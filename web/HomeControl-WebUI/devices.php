@@ -1,4 +1,4 @@
-<?php // include './ConnectDB.php'; ?>
+<?php include './ConnectDB.php'; ?>
 
 <!DOCTYPE html>
 <html lang="en-us">
@@ -8,7 +8,7 @@
   </head>
   <body class="container-fluid">
     <div class="menu">
-      <?php //require './webui-menu.php'; ?>
+      <?php require './webui-menu.php'; ?>
     </div>
     <div class="content">
 	  <div class="card-group">
@@ -18,12 +18,12 @@
 		  </div>
 		  <div class="card-body">
 			<?php
-				/*
+				
 				foreach($db->query("SELECT * FROM public.lights WHERE systemid = '1';") as $light)
 				{
 					echo $light['lightname'] . $row['lightlevel'];
 				}
-				*/
+				
 			?>			
 		  </div>
 		</div>
