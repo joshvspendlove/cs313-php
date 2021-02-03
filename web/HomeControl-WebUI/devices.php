@@ -29,21 +29,46 @@
 		</div>
 	  </div>
       <br>
-      <div class="card">
-        <div class="card-header">
-          <h1>Locks</h1>
-        </div>
-        <div class="card-body">
-           <?php
+	  <div class="card-group">
+		<div class="card">
+		  <div class="card-header">
+			<h1>Locks</h1>
+          </div>
+          <div class="card-body">
+             <?php
 				
 				foreach($db->query("SELECT * FROM locks WHERE systemid = '1';") as $lock)
 				{
 					echo $lock['lockname'] . " - " . $lock['lockstate'];
 				}
 				
-			?>	
+			  ?>	
+          </div>
         </div>
-      </div>
+	  </div>
+	  <div class="card-group">
+		<div class="card">
+		  <div class="card-header">
+			<h1>Contact Sensors</h1>
+          </div>
+          <div class="card-body">
+             <?php
+				echo '<h2>Doors</h2>';
+				foreach($db->query("SELECT * FROM contactsensors WHERE systemid = '1' AND contacttype = 'Door';") as $contact)
+				{
+					echo $contact['contactname'] . " - " . $contact['contactstate'];
+				}
+				
+				echo '<br><h2>Windows</h2>';
+				foreach($db->query("SELECT * FROM contactsensors WHERE systemid = '1' AND contacttype = 'Window';") as $contact)
+				{
+					echo $contact['contactname'] . " - " . $contact['contactstate'];
+				}
+				
+			  ?>	
+          </div>
+        </div>
+	  </div>
     </div>
   </body>
 </html>
