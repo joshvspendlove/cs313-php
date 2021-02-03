@@ -24,7 +24,12 @@
 	
 	foreach ($db->query('SELECT * FROM public.scriptures') as $scripture)
 	{
-		echo "<p><a href='details.php?id=$scripture['id']'><b>$scripture['book'] $scripture['chapter']:$scripture['verse']</b></a></p></br>";
+		$books = $scripture['book'];
+		$chapter = $scripture['chapter'];
+		$verse = $scripture['verse'];
+		$id = $scripture['id'];
+		
+		echo "<p><a href='details.php?id=$id'><b>$books $chapter:$verse</b></a></p></br>";
 	}
 
 ?>
