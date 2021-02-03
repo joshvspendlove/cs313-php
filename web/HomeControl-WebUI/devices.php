@@ -1,7 +1,7 @@
-<?php require 'ConnectDB.php'; ?>
+<?php include 'ConnectDB.php'; ?>
 <?php 
 	$devices = array();
-	foreach ($db->query("SELECT * FROM devices WHERE systemid = 1;") as $row)
+	foreach ($db->query("SELECT * FROM devices WHERE systemid = '1';") as $row)
 	{
 		$devices[$row['devicetype']] = array();
 		$devices[$row['devicetype']]['dbDeviceID'] = $row['dbdeviceid'];
@@ -27,12 +27,9 @@
 		  </div>
 		  <div class="card-body">
 			<?php
-				foreach($devices['light'] as $light)
+				foreach($db->query("SELECT * FROM public.lights WHERE systemid = '1';") as $light)
 				{
-					foreach ($db->query("SELECT * FROM lights WHERE dbdeviceid = '$light['dbdeviceid']';") as $row)
-					{	
-						echo $row['lightname'] . $row['lightlevel'];
-					}
+					echo $light['lightname'] . $row['lightlevel'];
 				}
 			?>			
 		  </div>
