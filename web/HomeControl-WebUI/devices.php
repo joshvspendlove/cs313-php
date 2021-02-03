@@ -11,18 +11,18 @@
       <?php require './webui-menu.php'; ?>
     </div>
     <div class="content">
-	  <title>
+	  <h1>
 	  <?php	
 	 	foreach($db->query("SELECT * FROM systems WHERE systemid = '1';") as $system)
 		{
 			echo $system['systemname'];
 		}		
 	  ?>
-	</title>
+	</h1>
 	  <div class="card-group">
         <div class="card">
           <div class="card-header">
-            <h1>Lights</h1>
+            <h2>Lights</h2>
 		  </div>
 		  <div class="card-body">
 			<?php
@@ -40,7 +40,7 @@
 	  <div class="card-group">
 		<div class="card">
 		  <div class="card-header">
-			<h1>Locks</h1>
+			<h2>Locks</h2>
           </div>
           <div class="card-body">
              <?php
@@ -58,23 +58,23 @@
 	  <div class="card-group">
 		<div class="card">
 		  <div class="card-header">
-			<h1>Contact Sensors</h1>
+			<h2>Contact Sensors</h2>
           </div>
           <div class="card-body">
              <?php
-				echo '<h2>Doors</h2>';
+				echo '<h3>Doors</h3>';
 				foreach($db->query("SELECT * FROM contactsensors WHERE systemid = '1' AND contacttype = 'Door';") as $contact)
 				{
 					echo $contact['contactname'] . " - " . $contact['contactstate'];
 				}
 				
-				echo '<br><br><h2>Windows</h2>';
+				echo '<br><br><h3>Windows</h3>';
 				foreach($db->query("SELECT * FROM contactsensors WHERE systemid = '1' AND contacttype = 'Window';") as $contact)
 				{
 					echo $contact['contactname'] . " - " . $contact['contactstate'];
 				}
 				
-				echo '<br><br><h2>Garage Doors</h2>';
+				echo '<br><br><h3>Garage Doors</h3>';
 				foreach($db->query("SELECT * FROM contactsensors WHERE systemid = '1' AND contacttype = 'Garage Door';") as $contact)
 				{
 					echo $contact['contactname'] . " - " . $contact['contactstate'];
