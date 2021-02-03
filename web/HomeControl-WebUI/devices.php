@@ -1,4 +1,4 @@
-<?php //include './ConnectDB.php'; ?>
+<?php include './ConnectDB.php'; ?>
 
 <!DOCTYPE html>
 <html lang="en-us">
