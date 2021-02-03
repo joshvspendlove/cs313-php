@@ -19,9 +19,9 @@
 		  <div class="card-body">
 			<?php
 				
-				foreach($db->query("SELECT * FROM public.lights WHERE systemid = '1';") as $light)
+				foreach($db->query("SELECT * FROM lights WHERE systemid = '1';") as $light)
 				{
-					echo $light['lightname'] . $row['lightlevel'];
+					echo $light['lightname'] . " - " . $light['lightlevel'];
 				}
 				
 			?>			
@@ -34,7 +34,14 @@
           <h1>Locks</h1>
         </div>
         <div class="card-body">
-           
+           <?php
+				
+				foreach($db->query("SELECT * FROM locks WHERE systemid = '1';") as $lock)
+				{
+					echo $lock['lockname'] . " - " . $lock['lockstate'];
+				}
+				
+			?>	
         </div>
       </div>
     </div>
