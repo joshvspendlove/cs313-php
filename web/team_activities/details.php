@@ -25,7 +25,11 @@
 	echo $id;
 	foreach ($db->query("SELECT * FROM public.scriptures WHERE id = '$id'") as $scripture)
 	{
-		echo "<p><b>$scripture['book'] $scripture['chapter']:$scripture['verse']</b> - $scripture['content']</p></br>";
+		$books = $scripture['book'];
+		$chapter = $scripture['chapter'];
+		$verse = $scripture['verse'];
+		$content = $scripture['content'];
+		echo "<p><b>$books $chapter:$verse</b></p><p>$content</p></br>";
 	}
 	
 ?>
