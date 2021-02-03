@@ -11,6 +11,14 @@
       <?php require './webui-menu.php'; ?>
     </div>
     <div class="content">
+	  <title>
+	  <?php	
+	 	foreach($db->query("SELECT * FROM systems WHERE systemid = '1';") as $system)
+		{
+			echo $system['systemname'];
+		}		
+	  ?>
+	</title>
 	  <div class="card-group">
         <div class="card">
           <div class="card-header">
