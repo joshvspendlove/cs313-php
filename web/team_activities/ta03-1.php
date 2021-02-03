@@ -1,8 +1,8 @@
 <?php
-$name = $_POST['name'];
-$email = $_POST['email'];
-$major = $_POST['major'];
-$comments = $_POST['comments'];
+$name = htmlspecialchars($_POST['name']);
+$email = htmlspecialchars($_POST['email']);
+$major = htmlspecialchars($_POST['major']);
+$comments = htmlspecialchars($_POST['comments']);
 
 echo "First name: " . $name . "<br>";
 echo "Email: <a href='mailto:" . $email . "'>".$email."</a><br>";
@@ -13,7 +13,7 @@ $places = array( 'northamerica' => 'North America', 'southamerica' => 'South Ame
 echo "Places you've visited:<br>";
 foreach ($places as $key => $value)
 {
-	if (isset($_POST[$key]))
+	if (isset(htmlspecialchars($_POST[$key])))
 	{
 		echo $value . '<br>';
 	}

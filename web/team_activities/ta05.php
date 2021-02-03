@@ -24,8 +24,7 @@
 	
 	foreach ($db->query('SELECT * FROM public.scriptures') as $scripture)
 	{
-		echo '<p><b>' . $scripture['book'] . ' ' . $scripture['chapter'] . ':' . $scripture['verse'] . '</b> - "' . $scripture['content'] . '"';
-		echo '<br/>';
+		echo "<p><a href='details.php?id=$scripture['id']'><b>$scripture['book'] $scripture['chapter']:$scripture['verse']</b></a></p></br>";
 	}
 
 ?>

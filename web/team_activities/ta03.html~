@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+<form method="post" action="./ta03.php">
+<input type="text" name="name">First Name</input><br>
+<input type="text" name="email">Email</input><br>
+<input type="radio" name="major">Computer Science</input>
+<input type="radio" name="major">Web Design and Development</input>
+<input type="radio" name="major">Computer information Technology</input>
+<input type="radio" name="major">Computer Engineering</input><br>
+<input type="textarea" name="comments">Comments</input><br>
+<input type="submit"/>
+</form>
+</body>
+</html>
