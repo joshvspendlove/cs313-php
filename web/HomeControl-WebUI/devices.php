@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html lang="en-us">
   <head>
-    <?php require "./header.php"; ?>
+    <?php require "../header.php"; ?>
     <title>Home Control WebUI</title>
   </head>
   <body class="container-fluid">
