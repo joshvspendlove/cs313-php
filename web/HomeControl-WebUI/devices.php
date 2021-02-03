@@ -3,12 +3,12 @@
 <!DOCTYPE html>
 <html lang="en-us">
   <head>
-    <?php include "../header.php"; ?>
+    <?php require "../header.php"; ?>
     <title>Home Control WebUI</title>
   </head>
   <body class="container-fluid">
     <div class="menu">
-      <?php include './webui-menu.php'; ?>
+      <?php require './webui-menu.php'; ?>
     </div>
     <div class="content">
 	  <div class="card-group">
@@ -18,12 +18,12 @@
 		  </div>
 		  <div class="card-body">
 			<?php
-				
+				/*
 				foreach($db->query("SELECT * FROM public.lights WHERE systemid = '1';") as $light)
 				{
 					echo $light['lightname'] . $row['lightlevel'];
 				}
-				
+				*/
 			?>			
 		  </div>
 		</div>
