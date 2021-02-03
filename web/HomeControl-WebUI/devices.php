@@ -1,14 +1,5 @@
 <?php include 'ConnectDB.php'; ?>
-<?php 
-	$devices = array();
-	foreach ($db->query("SELECT * FROM devices WHERE systemid = '1';") as $row)
-	{
-		$devices[$row['devicetype']] = array();
-		$devices[$row['devicetype']]['dbDeviceID'] = $row['dbdeviceid'];
-		$devices[$row['devicetype']]['deviceid'] = $row['deviceid'];
-	}
 
-?>
 <!DOCTYPE html>
 <html lang="en-us">
   <head>
