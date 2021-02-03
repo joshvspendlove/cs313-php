@@ -46,6 +46,7 @@
           </div>
         </div>
 	  </div>
+	  <br>
 	  <div class="card-group">
 		<div class="card">
 		  <div class="card-header">
@@ -59,8 +60,14 @@
 					echo $contact['contactname'] . " - " . $contact['contactstate'];
 				}
 				
-				echo '<br><h2>Windows</h2>';
+				echo '<br><br><h2>Windows</h2>';
 				foreach($db->query("SELECT * FROM contactsensors WHERE systemid = '1' AND contacttype = 'Window';") as $contact)
+				{
+					echo $contact['contactname'] . " - " . $contact['contactstate'];
+				}
+				
+				echo '<br><br><h2>Garage Doors</h2>';
+				foreach($db->query("SELECT * FROM contactsensors WHERE systemid = '1' AND contacttype = 'Garage Door';") as $contact)
 				{
 					echo $contact['contactname'] . " - " . $contact['contactstate'];
 				}
