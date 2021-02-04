@@ -1,7 +1,6 @@
 <?php 
 	include './ConnectDB.php'; 
 	include './SessionController.php';
-	echo $_SESSION['systemid'];
 ?>
 
 

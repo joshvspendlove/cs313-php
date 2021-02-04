@@ -16,6 +16,7 @@
 	}
 	else 
 	{
+		$_SESSION['systemid'] = null;
 		header("Location: ./devices.php"); 
 	}
 	
