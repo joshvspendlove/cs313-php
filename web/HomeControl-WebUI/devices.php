@@ -41,7 +41,7 @@
 	  
 	  $cardData = '<div class="card-group">';
       $cardData += '<div class="card">';
-      $cardData += '<div class="card-header">'
+      $cardData += '<div class="card-header">';
       $cardData += '<h2>Lights</h2>';
 	  $cardData += '</div>';
 	  $cardData += '<div class="card-body">';
