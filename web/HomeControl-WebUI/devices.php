@@ -37,24 +37,26 @@
 		  }	
 		  $systemName += "</h1>";
 		  echo $systemName;
-	  }		  
+	  	  
 	  
-	  $cardData = '<div class="card-group">';
-      $cardData += '<div class="card">';
-      $cardData += '<div class="card-header">';
-      $cardData += '<h2>Lights</h2>';
-	  $cardData += '</div>';
-	  $cardData += '<div class="card-body">';
+	 
+		  $cardData = '<div class="card-group">';
+		  $cardData += '<div class="card">';
+		  $cardData += '<div class="card-header">';
+		  $cardData += '<h2>Lights</h2>';
+		  $cardData += '</div>';
+		  $cardData += '<div class="card-body">';
 			
 				
-	  foreach($db->query("SELECT * FROM lights WHERE systemid = '$systemid';") as $light)
-	  {
-	      $cardData += $light['lightname'] . " - " . $light['lightlevel'] . '<hr>';
-	  }
-				
+		  foreach($db->query("SELECT * FROM lights WHERE systemid = '$systemid';") as $light)
+		  {
+			  $cardData += $light['lightname'] . " - " . $light['lightlevel'] . '<hr>';
+		  }
 						
-	  $cardData += '</div></div></div>';
-	  echo $cardData;
+		  $cardData += '</div></div></div>';
+	  
+		  echo $cardData;
+	  }
 	  ?>
       <br>
 	  <div class="card-group">
