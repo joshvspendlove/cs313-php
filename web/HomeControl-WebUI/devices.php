@@ -17,7 +17,7 @@
     <div class="content">
 	  <h1>
 	  <?php	
-	 	foreach($db->query("SELECT * FROM systems WHERE systemid = '$_SESSION['systemid']';") as $system)
+	 	foreach($db->query("SELECT * FROM systems WHERE systemid = '1';") as $system)
 		{
 			echo $system['systemname'];
 		}		
@@ -31,7 +31,7 @@
 		  <div class="card-body">
 			<?php
 				
-				foreach($db->query("SELECT * FROM lights WHERE systemid = '$_SESSION['systemid']';") as $light)
+				foreach($db->query("SELECT * FROM lights WHERE systemid = '1';") as $light)
 				{
 					echo $light['lightname'] . " - " . $light['lightlevel'] . '<br>';
 				}
@@ -49,7 +49,7 @@
           <div class="card-body">
              <?php
 				
-				foreach($db->query("SELECT * FROM locks WHERE systemid = '$_SESSION['systemid']';") as $lock)
+				foreach($db->query("SELECT * FROM locks WHERE systemid = '1';") as $lock)
 				{
 					echo $lock['lockname'] . " - " . $lock['lockstate'] . '<br>';
 				}
@@ -67,19 +67,19 @@
           <div class="card-body">
              <?php
 				echo '<h3>Doors</h3>';
-				foreach($db->query("SELECT * FROM contactsensors WHERE systemid = '$_SESSION['systemid']' AND contacttype = 'Door';") as $contact)
+				foreach($db->query("SELECT * FROM contactsensors WHERE systemid = '1' AND contacttype = 'Door';") as $contact)
 				{
 					echo $contact['contactname'] . " - " . $contact['contactstate'] . '<br>';
 				}
 				
 				echo '<br><br><h3>Windows</h3>';
-				foreach($db->query("SELECT * FROM contactsensors WHERE systemid = '$_SESSION['systemid']' AND contacttype = 'Window';") as $contact)
+				foreach($db->query("SELECT * FROM contactsensors WHERE systemid = '1' AND contacttype = 'Window';") as $contact)
 				{
 					echo $contact['contactname'] . " - " . $contact['contactstate'] . '<br>';
 				}
 				
 				echo '<br><br><h3>Garage Doors</h3>';
-				foreach($db->query("SELECT * FROM contactsensors WHERE systemid = '$_SESSION['systemid']' AND contacttype = 'Garage Door';") as $contact)
+				foreach($db->query("SELECT * FROM contactsensors WHERE systemid = '1' AND contacttype = 'Garage Door';") as $contact)
 				{
 					echo $contact['contactname'] . " - " . $contact['contactstate'] . '<br>';
 				}
