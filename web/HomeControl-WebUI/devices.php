@@ -29,7 +29,7 @@
 				
 				foreach($db->query("SELECT * FROM lights WHERE systemid = '1';") as $light)
 				{
-					echo $light['lightname'] . " - " . $light['lightlevel'];
+					echo $light['lightname'] . " - " . $light['lightlevel'] . '<br>';
 				}
 				
 			?>			
@@ -47,7 +47,7 @@
 				
 				foreach($db->query("SELECT * FROM locks WHERE systemid = '1';") as $lock)
 				{
-					echo $lock['lockname'] . " - " . $lock['lockstate'];
+					echo $lock['lockname'] . " - " . $lock['lockstate'] . '<br>';
 				}
 				
 			  ?>	
@@ -65,19 +65,19 @@
 				echo '<h3>Doors</h3>';
 				foreach($db->query("SELECT * FROM contactsensors WHERE systemid = '1' AND contacttype = 'Door';") as $contact)
 				{
-					echo $contact['contactname'] . " - " . $contact['contactstate'];
+					echo $contact['contactname'] . " - " . $contact['contactstate'] . '<br>';
 				}
 				
 				echo '<br><br><h3>Windows</h3>';
 				foreach($db->query("SELECT * FROM contactsensors WHERE systemid = '1' AND contacttype = 'Window';") as $contact)
 				{
-					echo $contact['contactname'] . " - " . $contact['contactstate'];
+					echo $contact['contactname'] . " - " . $contact['contactstate'] . '<br>';
 				}
 				
 				echo '<br><br><h3>Garage Doors</h3>';
 				foreach($db->query("SELECT * FROM contactsensors WHERE systemid = '1' AND contacttype = 'Garage Door';") as $contact)
 				{
-					echo $contact['contactname'] . " - " . $contact['contactstate'];
+					echo $contact['contactname'] . " - " . $contact['contactstate'] . '<br>';
 				}
 				
 			  ?>	
