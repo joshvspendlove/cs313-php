@@ -47,7 +47,7 @@
 	  $cardData += '<div class="card-body">';
 			
 				
-	  foreach($db->query("SELECT * FROM lights WHERE systemid = 'systemid';") as $light)
+	  foreach($db->query("SELECT * FROM lights WHERE systemid = '$systemid';") as $light)
 	  {
 	      $cardData += $light['lightname'] . " - " . $light['lightlevel'] . '<hr>';
 	  }
@@ -65,7 +65,7 @@
           <div class="card-body">
              <?php
 				
-				foreach($db->query("SELECT * FROM locks WHERE systemid = 'systemid';") as $lock)
+				foreach($db->query("SELECT * FROM locks WHERE systemid = '$systemid';") as $lock)
 				{
 					echo $lock['lockname'] . " - " . $lock['lockstate'] . '<hr>';
 				}
@@ -83,19 +83,19 @@
           <div class="card-body">
              <?php
 				echo '<h3>Doors</h3>';
-				foreach($db->query("SELECT * FROM contactsensors WHERE systemid = 'systemid' AND contacttype = 'Door';") as $contact)
+				foreach($db->query("SELECT * FROM contactsensors WHERE systemid = '$systemid' AND contacttype = 'Door';") as $contact)
 				{
 					echo $contact['contactname'] . " - " . $contact['contactstate'] . '<hr>';
 				}
 				
 				echo '<br><br><h3>Windows</h3>';
-				foreach($db->query("SELECT * FROM contactsensors WHERE systemid = 'systemid' AND contacttype = 'Window';") as $contact)
+				foreach($db->query("SELECT * FROM contactsensors WHERE systemid = '$systemid' AND contacttype = 'Window';") as $contact)
 				{
 					echo $contact['contactname'] . " - " . $contact['contactstate'] . '<hr>';
 				}
 				
 				echo '<br><br><h3>Garage Doors</h3>';
-				foreach($db->query("SELECT * FROM contactsensors WHERE systemid = 'systemid' AND contacttype = 'Garage Door';") as $contact)
+				foreach($db->query("SELECT * FROM contactsensors WHERE systemid = '$systemid' AND contacttype = 'Garage Door';") as $contact)
 				{
 					echo $contact['contactname'] . " - " . $contact['contactstate'] . '<hr>';
 				}
