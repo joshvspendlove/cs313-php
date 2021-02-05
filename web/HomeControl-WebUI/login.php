@@ -6,21 +6,18 @@
 	{
 		$username = $_GET['username'];
 		$password = $_GET['password'];
-		
-		foreach($db->query("SELECT systemid FROM users WHERE username = '$username' AND userpass = '$password';") as $system)
-		{
-			echo empty($system) . ' ' . isset($system['systemid']);
-			if(isset($system['systemid']))
-			{
-				$_SESSION['systemid'] = $system['systemid'];
-			}
-			else
-			{
-				$_SESSION['systemid'] = 0;
-			}
-			echo $_SESSION['systemid'];
-		}
 
+		$system = $db->query("SELECT systemid FROM users WHERE username = '$username' AND userpass = '$password';");
+		if (!empty($system))
+		{
+			$_SESSION['systemid'] = $system['systemid'];
+		
+		}
+		else
+		{
+			$_SESSION['systemid'] = 0;
+		}
+		echo $_SESSION['systemid'];
 //		header("Location: ./devices.php");
 	}
 	else 
