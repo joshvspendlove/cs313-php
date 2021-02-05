@@ -9,7 +9,7 @@
 		
 		foreach($db->query("SELECT systemid FROM users WHERE username = '$username' AND userpass = '$password';") as $system)
 		{
-			if(!pg_num_rows())
+			if(!empty($system))
 			{
 				$_SESSION['systemid'] = $system['systemid'];
 			}
