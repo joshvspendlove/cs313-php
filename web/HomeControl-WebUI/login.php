@@ -9,7 +9,7 @@
 		
 		foreach($db->query("SELECT systemid FROM users WHERE username = '$username' AND userpass = '$password';") as $system)
 		{
-			if(isset($system['systemid']))
+			if($system['systemid'] != '')
 			{
 				$_SESSION['systemid'] = $system['systemid'];
 			}
