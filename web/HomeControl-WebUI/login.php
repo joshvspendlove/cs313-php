@@ -9,7 +9,7 @@
 		
 		foreach($db->query("SELECT systemid FROM users WHERE username = '$username' AND userpass = '$password';") as $system)
 		{
-			if($system['systemid'] != '')
+			if(!pg_num_rows())
 			{
 				$_SESSION['systemid'] = $system['systemid'];
 			}
@@ -17,7 +17,7 @@
 			{
 				$_SESSION['systemid'] = 0;
 			}
-			echo gettype($_SESSION['systemid']);
+			echo $_SESSION['systemid'];
 		}
 
 //		header("Location: ./devices.php");
