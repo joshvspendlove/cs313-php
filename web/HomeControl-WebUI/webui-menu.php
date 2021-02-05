@@ -7,6 +7,7 @@
     echo '<form action="./login.php" method="get">';
     echo '<label>Username</label><input type="text" name='username'/>';
     echo '<label>Password</label><input type="text" name='password'/>';
+    echo '</form>';
     echo '</div>';
     echo '</nav>';
 
