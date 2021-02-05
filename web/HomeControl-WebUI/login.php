@@ -13,12 +13,13 @@
 			$_SESSION['systemid'] = $system['systemid'];
 			//header("Location: ./devices.php"); 
 		}
-
+echo '"' .$system['systemid'] .'"';
                // unset($_SESSION['systemid']);
                // header("Location: ./devices.php");
 	}
 	else 
 	{
+	echo 'here';
 		unset($_SESSION['systemid']);
 		//header("Location: ./devices.php"); 
 	}
