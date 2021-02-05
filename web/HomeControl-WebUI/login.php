@@ -2,7 +2,7 @@
 	include './ConnectDB.php';
 	include './SessionController.php';
 	
-	if (isset($_GET['username']) and isset($_GET['password']))
+//	if (isset($_GET['username']) and isset($_GET['password']))
 	{
 		$username = $_GET['username'];
 		$password = $_GET['password'];
@@ -17,7 +17,7 @@ echo '"' .$system['systemid'] .'"';
                // unset($_SESSION['systemid']);
                // header("Location: ./devices.php");
 	}
-	else 
+//	else 
 	{
 	echo 'here';
 		unset($_SESSION['systemid']);
