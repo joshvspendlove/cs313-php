@@ -20,7 +20,7 @@
 	else 
 	{
 		unset($_SESSION['systemid']);
-		header("Location: ./devices.php"); 
+		//header("Location: ./devices.php"); 
 	}
 	
  
