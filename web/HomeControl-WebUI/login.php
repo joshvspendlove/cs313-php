@@ -8,6 +8,7 @@
 		$password = $_GET['password'];
 
 		$system = $db->query("SELECT systemid FROM users WHERE username = '$username' AND userpass = '$password';");
+		echo gettype($system);
 		if (!empty($system))
 		{
 			$_SESSION['systemid'] = $system['systemid'];
