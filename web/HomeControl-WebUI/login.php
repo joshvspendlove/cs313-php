@@ -18,8 +18,8 @@
 				$_SESSION['systemid'] = 0;
 			}
 		}
-	
-//                header("Location: ./devices.php");
+
+		header("Location: ./devices.php");
 	}
 	else 
 	{
