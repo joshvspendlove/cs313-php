@@ -1,27 +1,30 @@
 <?php
 	include './ConnectDB.php';
 	include './SessionController.php';
-	echo $_GET['username'] . $_GET['password'];
-//	if (isset($_GET['username']) and isset($_GET['password']))
+	
+	if (isset($_GET['username']) and isset($_GET['password']))
 	{
 		$username = $_GET['username'];
 		$password = $_GET['password'];
 		
 		foreach($db->query("SELECT systemid FROM users WHERE username = '$username' AND userpass = '$password';") as $system)
 		{
-		echo '"' .$system['systemid'] .'"';
-			$_SESSION['systemid'] = $system['systemid'];
-			//header("Location: ./devices.php"); 
+			if(isset($system['systemid']))
+			{
+				$_SESSION['systemid'] = $system['systemid'];
+			}
+			else
+			{
+				unset($_SESSION['systemid']);
+			}
 		}
-echo '"' .$system['systemid'] .'"';
-               // unset($_SESSION['systemid']);
-               // header("Location: ./devices.php");
+	
+                header("Location: ./devices.php");
 	}
-//	else 
+	else 
 	{
-	echo 'here';
 		unset($_SESSION['systemid']);
-		//header("Location: ./devices.php"); 
+		header("Location: ./devices.php"); 
 	}
 	
  
