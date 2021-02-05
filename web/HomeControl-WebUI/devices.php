@@ -9,7 +9,7 @@
 	}
 	else
 	{
-		$systemid = null;
+		$systemid = 0;
 	}
 */
 	$systemid = 1;
@@ -28,7 +28,7 @@
     </div>
     <div class="content">
 	  <?php	
-	  if (!is_null($systemid))
+	  if ($systemid != 0)
 	  {
 		  $systemName = "<h1>";
 		  foreach($db->query("SELECT * FROM systems WHERE systemid = $systemid;") as $system)
