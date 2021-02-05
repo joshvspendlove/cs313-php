@@ -36,7 +36,7 @@
 			  $systemName += "'" . $system['systemname'] . "'";
 		  }	
 		  $systemName += "</h1>";
-		  echo $systemName;
+		//  echo $systemName;
 	  	  
 	  }
 	 
@@ -55,7 +55,7 @@
 						
 		  $cardData += '</div></div></div>';
 	  
-		  echo $cardData;
+		  //echo $cardData;
 	  
 	  ?>
       <br>
