@@ -3,7 +3,8 @@
 	include './SessionController.php';
 
 	unset($_SESSION['systemid']);
-	
+	$_SESSION['loggedin'] = False;
+
 	if (isset($_GET['username']) and isset($_GET['password']))
 	{
 		$username = $_GET['username'];
@@ -12,6 +13,7 @@
 		foreach($db->query("SELECT systemid FROM users WHERE username = '$username' AND userpass = '$password';") as $system)
 		{
 			$_SESSION['systemid'] = $system['systemid'];
+			$_SESSION['loggedin'] = True;
 		}
 		if(!isset($_SESSION['systemid']))
 		{
