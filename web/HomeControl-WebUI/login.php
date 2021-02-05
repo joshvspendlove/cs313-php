@@ -16,7 +16,7 @@
 	}
 	else 
 	{
-		$_SESSION['systemid'] = null;
+		unset($_SESSION['systemid']);
 		header("Location: ./devices.php"); 
 	}
 	

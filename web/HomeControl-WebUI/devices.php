@@ -31,9 +31,9 @@
 	  if (!is_null($systemid))
 	  {
 		  $systemName = "<h1>";
-		  foreach($db->query("SELECT * FROM systems WHERE systemid = '$systemid';") as $system)
+		  foreach($db->query("SELECT * FROM systems WHERE systemid = $systemid;") as $system)
 		  {
-			  $systemName += $system['systemname'];
+			  $systemName += "'" . $system['systemname'] . "'";
 		  }	
 		  $systemName += "</h1>";
 		  echo $systemName;
