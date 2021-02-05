@@ -12,7 +12,9 @@
 			$_SESSION['systemid'] = $system['systemid'];
 			header("Location: ./devices.php"); 
 		}
-		
+
+                unset($_SESSION['systemid']);
+                header("Location: ./devices.php");
 	}
 	else 
 	{
