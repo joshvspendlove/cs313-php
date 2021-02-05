@@ -9,7 +9,7 @@
 		
 		foreach($db->query("SELECT systemid FROM users WHERE username = '$username' AND userpass = '$password';") as $system)
 		{
-		echo $system['systemid'];
+		echo '"' .$system['systemid'] .'"';
 			$_SESSION['systemid'] = $system['systemid'];
 			//header("Location: ./devices.php"); 
 		}
