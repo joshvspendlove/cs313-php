@@ -33,10 +33,11 @@
 		  $systemName = "<h1>";
 		  foreach($db->query("SELECT * FROM systems WHERE systemid = $systemid;") as $system)
 		  {
+		  echo $systemid . $system['systemName'];
 			  $systemName += "'" . $system['systemname'] . "'";
 		  }	
 		  $systemName += "</h1>";
-		  echo $systemName;
+		 // echo $systemName;
 	  	  
 	  
 	 
