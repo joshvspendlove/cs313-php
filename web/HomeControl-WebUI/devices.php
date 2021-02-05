@@ -28,7 +28,7 @@
     </div>
     <div class="content">
 	  <?php	
-	  if (!is_null($systemid))
+	  if (is_null($systemid))
 	  {
 		  $systemName = "<h1>";
 		  foreach($db->query("SELECT * FROM systems WHERE systemid = $systemid;") as $system)
