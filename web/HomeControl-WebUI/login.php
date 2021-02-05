@@ -17,9 +17,10 @@
 			{
 				$_SESSION['systemid'] = 0;
 			}
+			echo $_SESSION['systemid'];
 		}
 
-		header("Location: ./devices.php");
+//		header("Location: ./devices.php");
 	}
 	else 
 	{
