@@ -17,7 +17,7 @@
 			{
 				$_SESSION['systemid'] = 0;
 			}
-			echo $_SESSION['systemid'];
+			echo gettype($_SESSION['systemid']);
 		}
 
 //		header("Location: ./devices.php");
