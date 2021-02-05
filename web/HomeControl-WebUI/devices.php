@@ -2,7 +2,7 @@
 	include './ConnectDB.php'; 
 	include './SessionController.php';
 	
-/*	
+	
 	if (isset($_SESSION['systemid']))
 	{
 		$systemid = $_SESSION['systemid'];
@@ -11,7 +11,7 @@
 	{
 		$systemid = 0;
 	}
-*/
+
 	$systemid = 1;
 ?>
 
