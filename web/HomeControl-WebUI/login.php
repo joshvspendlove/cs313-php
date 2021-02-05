@@ -1,7 +1,7 @@
 <?php
 	include './ConnectDB.php';
 	include './SessionController.php';
-	
+	echo $_GET['username'] . $_GET['password'];
 //	if (isset($_GET['username']) and isset($_GET['password']))
 	{
 		$username = $_GET['username'];
