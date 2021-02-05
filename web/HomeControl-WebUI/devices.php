@@ -30,32 +30,29 @@
 	  <?php	
 	  if ($systemid != 0)
 	  {
-		  $systemName = "<h1>";
+		  echo "<h1>";
 		  foreach($db->query("SELECT * FROM systems WHERE systemid = $systemid;") as $system)
 		  {
-			  $systemName += "'" . $system['systemname'] . "'";
+			  echo $system['systemname'];
 		  }	
-		  $systemName += "</h1>";
-		//  echo $systemName;
+		  echo "</h1>";
 	  	  
 	  }
 	 
-		  $cardData = '<div class="card-group">';
-		  $cardData += '<div class="card">';
-		  $cardData += '<div class="card-header">';
-		  $cardData += '<h2>Lights</h2>';
-		  $cardData += '</div>';
-		  $cardData += '<div class="card-body">';
+		  echo '<div class="card-group">';
+		  echo '<div class="card">';
+		  echo '<div class="card-header">';
+		  echo '<h2>Lights</h2>';
+		  echo '</div>';
+		  echo '<div class="card-body">';
 			
 				
 		  foreach($db->query("SELECT * FROM lights WHERE systemid = '$systemid';") as $light)
 		  {
-			  $cardData += $light['lightname'] . " - " . $light['lightlevel'] . '<hr>';
+			  echo $light['lightname'] . " - " . $light['lightlevel'] . '<hr>';
 		  }
 						
-		  $cardData += '</div></div></div>';
-	  
-		  //echo $cardData;
+		  echo '</div></div></div>';
 	  
 	  ?>
       <br>
