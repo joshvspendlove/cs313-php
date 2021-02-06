@@ -1,7 +1,3 @@
-
-
-
-
 <?php
 
     echo '<nav class="navbar navbar-expand-sm bg-light navbar-light">';
@@ -13,13 +9,13 @@
 
     if($_SESSION['loggedin'] == False)
     {
-		echo '<label>Username</label><input class="form-control mr-sm-2"  type="text" name="username" placeholder="Username"/>';
-    	echo '<label>Password</label><input class="form-control mr-sm-2"  type="password" name="password" placeholder="Password"/>';
+		echo '<input class="form-control mr-sm-2" type="text" name="username" placeholder="Username"/>';
+    	echo '<input class="form-control mr-sm-2" type="password" name="password" placeholder="Password"/>';
     	echo '<input class="btn btn-outline-success my-2 my-sm-0" type="Submit" value="Login"/>';
     }
     else
     {
-	echo '<input type="Submit" value="Logout"/>';
+		echo '<input class="btn btn-outline-danger my-2 my-sm-0" type="Submit" value="Logout"/>';
     }
     echo '</form>';
     echo '</div>';
