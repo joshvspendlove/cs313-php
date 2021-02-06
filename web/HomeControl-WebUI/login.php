@@ -5,10 +5,10 @@
 	unset($_SESSION['systemid']);
 	$_SESSION['loggedin'] = False;
 
-	if (isset($_POST['username']) and isset($_POST['password']))
+	if (htmlspecialchars($_POST['username']) != null and htmlspecialchars($_POST['password']) != null)
 	{
-		$username = $_POST['username'];
-		$password = $_POST['password'];
+		$username = htmlspecialchars($_POST['username']);
+		$password = htmlspecialchars($_POST['password']);
 	
 		foreach($db->query("SELECT systemid FROM users WHERE username = '$username' AND userpass = '$password';") as $system)
 		{
