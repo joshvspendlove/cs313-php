@@ -6,13 +6,7 @@
   </head>
   <body class="container-fluid">
     <div class="menu">
-      <nav class="navbar navbar-expand-sm bg-light navbar-light">
-        <div class="navbar-nav">
-          <a href="../index.php" class="menuLink">Home</a>
-          <a href="../intro.php" class="menuLink">Intro</a>
-          <a href="../assignments.php" class="menuLink active">Assignments</a>
-        </div>
-      </nav>
+      <?php require "./menu.php" ?>
     </div>
     <div class="content">
       <div class="card-deck">
@@ -23,7 +17,7 @@
 	</div>
 	<div class="card">
           <div class="card-header">
-            <h1><a>Week 4</a></h1>
+            <h1><a href="../HomeControl-WebUI/devices.php">Home Control WebUI</a></h1>
           </div>
 	</div>
       </div>

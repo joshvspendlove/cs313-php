@@ -6,13 +6,7 @@
   </head>
   <body class="container-fluid">
     <div class="menu">
-      <nav class="navbar navbar-expand-sm bg-light navbar-light">
-        <div class="navbar-nav">
-          <a href="../index.php" class="menuLink active">Home</a>
-          <a href="../intro.php" class="menuLink">Intro</a>
-          <a href="../assignments.php" class="menuLink">Assignments</a>
-        </div>
-      </nav>
+      <?php require "./menu.php" ?>
     </div>
     <div class="content">
 	  <div class="card">
