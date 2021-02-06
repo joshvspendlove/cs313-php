@@ -8,13 +8,13 @@
 
     if($_SESSION['loggedin'] == False)
     {
-		echo '<label>Username</label><input type="text" name="username"/>';
-    	echo '<label>Password</label><input type="password" name="password"/>';
-    	echo '<input type="Submit" value="Login"/>';
+		echo '<label class="p-2">Username</label><input class="p-2" type="text" name="username"/>';
+    	echo '<label class="p-2">Password</label><input class="p-2" type="password" name="password"/>';
+    	echo '<input class="p-2" type="Submit" value="Login"/>';
     }
     else
     {
-	echo '<input type="Submit" value="Logout"/>';
+	echo '<input class="p-2" type="Submit" value="Logout"/>';
     }
     echo '</form>';
     echo '</div>';
