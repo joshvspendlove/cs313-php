@@ -21,8 +21,8 @@
 
     if($_SESSION['loggedin'] == False)
     {
-		echo '<input class="form-control mr-sm-2" type="text" name="username" placeholder="Username"/>';
-    	echo '<input class="form-control mr-sm-2" type="password" name="password" placeholder="Password"/>';
+		echo '<input class="form-control mr-sm-2" type="text" name="username" placeholder="Username" autocomplete="username"/>';
+    	echo '<input class="form-control mr-sm-2" type="password" name="password" placeholder="Password" autocomplete="current-password"/>';
     	echo '<input class="btn btn-outline-success my-2 my-sm-0" type="Submit" value="Login"/>';
     }
     else
