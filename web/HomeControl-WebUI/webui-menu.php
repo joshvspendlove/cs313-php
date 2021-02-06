@@ -4,7 +4,7 @@
     echo '<div class="navbar-nav">';
     echo '<a href="../assignments.php" class="menuLink">Home</a>';
     echo '<a href="./devices.php" class="menuLink">Devices</a>';
-    echo '<form class="float-md-right" action="./login.php" method="post">';
+    echo '<form class="d-flex justify-content-end" action="./login.php" method="post">';
 
     if($_SESSION['loggedin'] == False)
     {
