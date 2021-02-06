@@ -1,5 +1,5 @@
 <?php
-
+	echo $_SERVER['REQUEST_URI'];
     echo '<nav class="navbar navbar-expand-sm bg-light navbar-light">';
     echo '<ul class="navbar-nav mr-auto">';
     echo '<li class="nav-item"><a href="../assignments.php" class="nav-link">Home</a></li>';
