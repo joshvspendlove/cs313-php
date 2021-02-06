@@ -5,9 +5,10 @@
 <?php
 
     echo '<nav class="navbar navbar-expand-sm bg-light navbar-light">';
-    echo '<div class="navbar-nav mr-auto">';
-    echo '<a href="../assignments.php" class="nav-link">Home</a>';
-    echo '<a href="./devices.php" class="nav-link">Devices</a>';
+    echo '<ul class="navbar-nav mr-auto">';
+    echo '<li class="nav-item"><a href="../assignments.php" class="nav-link">Home</a></li>';
+    echo '<li class="nav-item"><a href="./devices.php" class="nav-link">Devices</a></li>';
+	echo '</ul>';
 	echo '<form class="form-inline my-2 my-lg-0" action="./login.php" method="post">';
 
     if($_SESSION['loggedin'] == False)
