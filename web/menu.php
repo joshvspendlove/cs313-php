@@ -1,31 +1,31 @@
 <?php
 	$page = ltrim($_SERVER['REQUEST_URI'], '/');
     echo '<nav class="navbar navbar-expand-sm bg-light navbar-light">';
-    echo '<div class="navbar-nav">';
+    echo '<ul class="navbar-nav">';
 	switch($page)
 	{
 		case 'index.php':
-			echo '<a href="../index.php" class="menuLink active">Home</a>';
-			echo '<a href="../intro.php" class="menuLink">Intro</a>';
-			echo '<a href="../assignments.php" class="menuLink">Assignments</a>';
+			echo '<li class="nav-item"><a href="../index.php" class="nav-link active">Home</a>';
+			echo '<li class="nav-item"><a href="../intro.php" class="nav-link">Intro</a>';
+			echo '<li class="nav-item"><a href="../assignments.php" class="nav-link">Assignments</a>';
 			break;
 		
 		case 'intro.php':
-			echo '<a href="../index.php" class="menuLink">Home</a>';
-			echo '<a href="../intro.php" class="menuLink active">Intro</a>';
-			echo '<a href="../assignments.php" class="menuLink">Assignments</a>';
+			echo '<li class="nav-item"><a href="../index.php" class="nav-link">Home</a>';
+			echo '<li class="nav-item"><a href="../intro.php" class="nav-link active">Intro</a>';
+			echo '<li class="nav-item"><a href="../assignments.php" class="nav-link">Assignments</a>';
 			break;
 			
 		case 'assignments.php':
-			echo '<a href="../index.php" class="menuLink">Home</a>';
-			echo '<a href="../intro.php" class="menuLink">Intro</a>';
-			echo '<a href="../assignments.php" class="menuLink active">Assignments</a>';
+			echo '<li class="nav-item"><a href="../index.php" class="nav-link">Home</a>';
+			echo '<li class="nav-item"><a href="../intro.php" class="nav-link">Intro</a>';
+			echo '<li class="nav-item"><a href="../assignments.php" class="nav-link active">Assignments</a>';
 			break;
 			
 		default:
-			echo '<a href="../index.php" class="menuLink">Home</a>';
-			echo '<a href="../intro.php" class="menuLink">Intro</a>';
-			echo '<a href="../assignments.php" class="menuLink">Assignments</a>';			
+			echo '<li class="nav-item"><a href="../index.php" class="nav-link">Home</a></li>';
+			echo '<li class="nav-item"><a href="../intro.php" class="nav-link">Intro</a></li>';
+			echo '<li class="nav-item"><a href="../assignments.php" class="nav-link">Assignments</a></li>';			
 	}
     echo '</div>';
     echo '</nav>';
