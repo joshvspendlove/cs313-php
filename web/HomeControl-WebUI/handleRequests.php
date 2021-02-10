@@ -1,9 +1,12 @@
 <?php
 require './ConnectDB.php';
 
-if (htmlspecialchars($_POST['request']) != null)
+if (htmlspecialchars($_POST['PROJECT_DATA']) != null)
 {
-	$request = htmlspecialchars($_POST['request']);
+	$data = json_encodehtmlspecialchars($_POST['PROJECT_DATA']);
+	
+	
+	$request = $data['request']);
 
 	switch($request)
 	{
@@ -23,16 +26,20 @@ if (htmlspecialchars($_POST['request']) != null)
 
 	}
 }
+else
+{
+	echo 'Request Failed';
+}
 
 function add_device()
 {
-	$devices = json_decode($new_devices);
+	$devices = json_encode($new_devices);
 	echo 'add_device()';
 }
 
 function update_device()
 {
-	$updated_data = json_decode($device_data);
+	$updated_data = json_encode($device_data);
 	echo 'update_device()';
 }
 
