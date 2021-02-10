@@ -9,10 +9,12 @@ if (htmlspecialchars($_POST['request']) != null)
 	{
 		case 'add_device':
 			 $new_devices = htmlspecialchars($_POST['new_devices']);
+			 add_device();
 		     break;
 
 		case 'update_device':
 			 $device_data = htmlspecialchars($_POST['device_data']);
+			 update_device();
 		     break;
 
 		case 'get_device_state':
