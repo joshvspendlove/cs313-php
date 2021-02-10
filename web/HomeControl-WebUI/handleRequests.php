@@ -6,7 +6,7 @@ if (htmlspecialchars($_POST['PROJECT_DATA']) != null)
 	$data = json_encodehtmlspecialchars($_POST['PROJECT_DATA']);
 	
 	
-	$request = $data['request']);
+	$request = $data['request'];
 
 	switch($request)
 	{
