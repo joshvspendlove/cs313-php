@@ -1,6 +1,9 @@
 <?php
 require './ConnectDB.php';
 var_dump($_POST);
+
+?>
+
 if (htmlspecialchars($_POST['PROJECT_DATA']) != null)
 {
 	$data = json_encodehtmlspecialchars($_POST['PROJECT_DATA']);
@@ -47,4 +50,3 @@ function get_device_state()
 {
 	echo 'get_device_state()';
 }
-?>
