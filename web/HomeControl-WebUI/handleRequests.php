@@ -7,7 +7,7 @@ if (isset($_POST['DATA']))
 	$data = json_encode($_POST['DATA']);
 	
 	echo $data;
-	$request = $data['request'];
+	$request = $data->request;
 
 	echo $request;
 	
