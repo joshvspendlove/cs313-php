@@ -21,6 +21,7 @@
   <head>
     <?php require "../header.php"; ?>
     <title>Home Control WebUI</title>
+	<link rel="stylesheet" type="text/css" href="./controldesign.css"/>
   </head>
   <body class="container-fluid">
     <div class="menu">
@@ -49,7 +50,7 @@
 				
 		  foreach(dbConnect()->query("SELECT * FROM lights WHERE systemid = '$systemid';") as $light)
 		  {
-			  echo $light['lightname'] . " - " . $light['lightlevel'] . '<hr>';
+			  echo $light['lightname'] . " - " . $light['lightlevel'] . '<label class="switch"><input type="checkbox" id="$light["deviceid"]" onchange="alert(id)"><span class="slider"></span></label><hr>';
 		  }
 						
 		  echo '</div></div></div>';
