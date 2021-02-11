@@ -12,7 +12,10 @@ function toggleSwitch(id)
 	}
 	xhttp.onreadystatechange = function() 
 	{
-		
+		if (this.readyState == 4 && this.status == 200) 
+		{
+			console.log(this.responseText);
+		}
 	};
 	xhttp.open("POST", "handleRequests.php", true);
 	xhttp.send("DATA={'request':'update_device','device_data':{'" + id +"':'" + state + "'}");
