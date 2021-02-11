@@ -69,7 +69,7 @@ function get_device_state($systemid)
 	$contacts = array();
 	foreach(dbConnect()->query("SELECT * FROM contactsensors WHERE systemid = '$systemid';") as $contact)
 	{
-		$contacts[$contact['deviceid']] = $lock['contactstate'];
+		$contacts[$contact['deviceid']] = $contact['contactstate'];
 	}
 	
 	$deviceData['lights'] = $lights;
