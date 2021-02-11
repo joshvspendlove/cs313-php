@@ -1,13 +1,11 @@
 <?php
 require './ConnectDB.php';
 var_dump($_POST);
-echo htmlspecialchars($_POST['DATA']);
 
-if (htmlspecialchars($_POST['DATA']) != null)
+if (isset($_POST['DATA']))
 {
-	$data = json_encodehtmlspecialchars($_POST['DATA']);
+	$data = json_encode($_POST['DATA']);
 	
-	echo 'request received';
 	$request = $data['request'];
 
 	switch($request)
