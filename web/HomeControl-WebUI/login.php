@@ -10,7 +10,7 @@
 		$username = htmlspecialchars($_POST['username']);
 		$password = htmlspecialchars($_POST['password']);
 	
-		foreach($db->query("SELECT systemid FROM users WHERE username = '$username' AND userpass = '$password';") as $system)
+		foreach(dbConnect()->query("SELECT systemid FROM users WHERE username = '$username' AND userpass = '$password';") as $system)
 		{
 			$_SESSION['systemid'] = $system['systemid'];
 			$_SESSION['loggedin'] = True;
