@@ -1,5 +1,5 @@
 <?php
-require './ConnectDB.php';
+include './ConnectDB.php';
 var_dump($_POST);
 
 if (isset($_POST['DATA']))
@@ -7,8 +7,6 @@ if (isset($_POST['DATA']))
 	$data = json_decode($_POST['DATA'], true);
 	$systemid = $data['systemid'];
 	$request = $data['request'];
-	
-	echo $systemid;
 	
 	switch($request)
 	{
