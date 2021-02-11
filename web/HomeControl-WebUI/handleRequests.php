@@ -4,7 +4,7 @@ var_dump($_POST);
 
 if (isset($_POST['DATA']))
 {
-	$data = json_decode($_POST['DATA']);
+	$data = json_decode($_POST['DATA'], true);
 	
 	echo $data;
 	$request = $data['request'];
@@ -14,12 +14,12 @@ if (isset($_POST['DATA']))
 	switch($request)
 	{
 		case 'add_device':
-			 $new_devices = htmlspecialchars($_POST['new_devices']);
+			 $new_devices = $data['new_devices'];
 			 add_device();
 		     break;
 
 		case 'update_device':
-			 $device_data = htmlspecialchars($_POST['device_data']);
+			 $device_data = $data['device_data'];
 			 update_device();
 		     break;
 
