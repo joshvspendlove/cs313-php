@@ -1,7 +1,7 @@
 <?php
 require './ConnectDB.php';
 var_dump($_POST);
-
+echo $_POST['DATA'];
 
 if (htmlspecialchars($_POST['DATA']) != null)
 {
