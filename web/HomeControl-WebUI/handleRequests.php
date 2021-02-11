@@ -54,11 +54,28 @@ function get_device_state($systemid)
 	echo 'get_device_state()';
 	$deviceData = array();
 	
+	$lights = array();
 	foreach(dbConnect()->query("SELECT * FROM lights WHERE systemid = '$systemid';") as $light)
 	{
-	    echo $light['deviceid'] . " - " . $light['lightlevel'];
-		$deviceData[$light['deviceid']] = $light['lightlevel'];
+		$lights[$light['deviceid']] = $light['lightlevel'];
 	}
+	
+	$locks = array();
+	foreach(dbConnect()->query("SELECT * FROM locks WHERE systemid = '$systemid';") as $lock)
+	{
+		$locks[$lock['deviceid']] = $lock['lockstate'];
+	}
+	
+	$contacts = array();
+	foreach(dbConnect()->query("SELECT * FROM contactsensors WHERE systemid = '$systemid';") as $contact)
+	{
+		$contacts[$contact['deviceid']] = $lock['contactstate'];
+	}
+	
+	$deviceData['lights'] = $lights;
+	$deviceData['locks'] = $locks;
+	$deviceData['contacts'] = $contacts;
+	
 	$deviceData = json_encode($deviceData);
 	echo $deviceData;
 }
