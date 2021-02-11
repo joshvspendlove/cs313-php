@@ -7,7 +7,7 @@ if (isset($_POST['DATA']))
 	$data = json_decode($_POST['DATA'], true);
 	$systemid = $data['systemid'];
 	$request = $data['request'];
-	
+	echo $request;
 	switch($request)
 	{
 		case 'add_device':
