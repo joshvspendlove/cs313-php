@@ -53,10 +53,10 @@ function get_device_state($systemid)
 {
 	echo 'get_device_state()';
 	
-	foreach(dbConnect()->query('SELECT * from lights WHERE systemid = $systemid;') as $row)
-	{
-		echo $row['lightlevel'];
-	}
+	foreach(dbConnect()->query("SELECT * FROM lights WHERE systemid = '$systemid';") as $light)
+		  {
+			  echo $light['lightname'] . " - " . $light['lightlevel'] . '<hr>';
+		  }
 }
 ?>
 
