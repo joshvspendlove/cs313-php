@@ -5,11 +5,8 @@ var_dump($_POST);
 if (isset($_POST['DATA']))
 {
 	$data = json_decode($_POST['DATA'], true);
-	
-	echo $data;
+	$systemid = $data['systemid'];
 	$request = $data['request'];
-
-	echo $request;
 	
 	switch($request)
 	{
@@ -36,19 +33,29 @@ else
 
 function add_device()
 {
-	$devices = json_encode($new_devices);
 	echo 'add_device()';
+	foreach ($new_devices as $device)
+	{
+		
+	}
 }
 
 function update_device()
 {
-	$updated_data = json_encode($device_data);
 	echo 'update_device()';
+	foreach ($device_data as $device)
+	{
+		
+	}
 }
 
 function get_device_state()
 {
 	echo 'get_device_state()';
+	foreach($db->query('SELECT * from lights WHERE systemid = $systemid') as $row)
+	{
+		echo $row['lightlevel'];
+	}
 }
 ?>
 
