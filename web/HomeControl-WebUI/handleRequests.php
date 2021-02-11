@@ -52,7 +52,7 @@ function update_device()
 function get_device_state()
 {
 	echo 'get_device_state()';
-	foreach($db->query('SELECT * from lights WHERE systemid = $systemid') as $row)
+	foreach($db->query('SELECT * from lights WHERE systemid = $systemid;') as $row)
 	{
 		echo $row['lightlevel'];
 	}
