@@ -52,11 +52,15 @@ function update_device()
 function get_device_state($systemid)
 {
 	echo 'get_device_state()';
+	$deviceData = array();
 	
 	foreach(dbConnect()->query("SELECT * FROM lights WHERE systemid = '$systemid';") as $light)
-		  {
-			  echo $light['lightname'] . " - " . $light['lightlevel'] . '<hr>';
-		  }
+	{
+	    echo $light['deviceid'] . " - " . $light['lightlevel'];
+		$deviceData[$light['deviceid']] = $light['lightlevel'];
+	}
+	$deviceData = json_encode($deviceData);
+	echo $deviceData;
 }
 ?>
 
