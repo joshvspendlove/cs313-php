@@ -8,6 +8,8 @@ if (isset($_POST['DATA']))
 	
 	$request = $data['request'];
 
+	echo $request;
+	
 	switch($request)
 	{
 		case 'add_device':
