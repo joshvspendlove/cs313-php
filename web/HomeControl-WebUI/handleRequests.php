@@ -8,6 +8,8 @@ if (isset($_POST['DATA']))
 	$systemid = $data['systemid'];
 	$request = $data['request'];
 	
+	echo $systemid;
+	
 	switch($request)
 	{
 		case 'add_device':
@@ -21,7 +23,7 @@ if (isset($_POST['DATA']))
 		     break;
 
 		case 'get_device_state':
-			 get_device_state();
+			 get_device_state($systemid);
 		     break;
 
 	}
@@ -49,10 +51,10 @@ function update_device()
 	}
 }
 
-function get_device_state()
+function get_device_state($systemid)
 {
 	echo 'get_device_state()';
-	echo $systemid;
+	
 	foreach($db->query('SELECT * from lights WHERE systemid = $systemid;') as $row)
 	{
 		echo $row['lightlevel'];
