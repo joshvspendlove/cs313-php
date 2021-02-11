@@ -105,5 +105,6 @@
         </div>
 	  </div>
     </div>
+	<script src="devicecontrol.js"></script>
   </body>
 </html>
