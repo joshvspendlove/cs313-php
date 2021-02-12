@@ -26,11 +26,11 @@
 
 .lightslider:before {
   position: absolute;
-  content: "On";
-  height: 30px;
-  width: 30px;
-  left: 5px;
-  bottom: 5px;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
   background-color: white;
   -webkit-transition: .5;
   transition: .5s;
