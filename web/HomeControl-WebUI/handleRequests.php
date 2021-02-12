@@ -44,8 +44,8 @@ function add_device()
 function update_device($device_data)
 {
 	echo 'update_device()';
-	var_dump($device_data);
-	foreach ($device_data['device'] as $device)
+
+	foreach ($device_data['device_data'] as $device)
 	{
 		echo $device['deviceid'] . '-' . $device['lightlevel'];
 	}
