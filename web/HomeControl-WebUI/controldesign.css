@@ -66,3 +66,7 @@ input:focus + .slider.lock {
 input:checked + .slider.lock {
   background-color: #ff0000;
 }
+
+.col {
+  text-align: center;
+}

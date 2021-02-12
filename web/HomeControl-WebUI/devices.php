@@ -50,7 +50,7 @@
 				
 		  foreach(dbConnect()->query("SELECT * FROM lights WHERE systemid = '$systemid';") as $light)
 		  {			  
-			  echo '<div class="row"><div class="col-md"><h4>' . $light['lightname'] . '</h4></div><div class="col-md"><h4>Off ' . '<label class="switch"><input type="checkbox" id="' . $light["deviceid"] .'" onchange="toggleLight(id);" ';
+			  echo '<div class="row"><div class="col"><h4>' . $light['lightname'] . '</h4></div><div class="col"><h4>Off ' . '<label class="switch"><input type="checkbox" id="' . $light["deviceid"] .'" onchange="toggleLight(id);" ';
 			  if ($light['lightlevel'] > 0)
 			  {
 				  echo 'checked';
@@ -73,7 +73,7 @@
 				
 				foreach(dbConnect()->query("SELECT * FROM locks WHERE systemid = '$systemid';") as $lock)
 				{
-					echo '<div class="row"><div class="col-md"><h4>' . $lock['lockname'] . '</h4></div><div class="col-md"><h4>Unlock ' . '<label class="switch"><input type="checkbox" id="' . $lock["deviceid"] .'" onchange="toggleLock(id);" ';
+					echo '<div class="row"><div class="col"><h4>' . $lock['lockname'] . '</h4></div><div class="col"><h4>Unlock ' . '<label class="switch"><input type="checkbox" id="' . $lock["deviceid"] .'" onchange="toggleLock(id);" ';
 					if ($lock['lockstate'] == "Locked")
 					{
 						echo 'checked';
