@@ -72,11 +72,9 @@ input:checked + .slider.lock {
 }
 
 .lightstate {
-  font-size: 30px;
   font-weight: bold;
 }
 
-.lockstate {
-  font-size: 30px;	
+.lockstate {	
   font-weight: bold;
 }
