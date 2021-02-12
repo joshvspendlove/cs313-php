@@ -53,13 +53,10 @@
 			  echo '<h4>' . $light['lightname'] . ' . . . ' . '<label class="lightswitch"><input type="checkbox" id="' . $light["deviceid"] .'" onchange="toggleSwitch(id);" ';
 			  if ($light['lightlevel'] > 0)
 			  {
-				  echo 'checked><span class="lightslider"><span>ON';
+				  echo 'checked';
 			  }
-			  else
-			  {
-				  echo '><span class="lightslider"><span>OFF';
-			  }
-			  echo '</span></span></label></h4><hr>';
+			  
+			  echo '><span class="lightslider"></span></label></h4><hr>';
 		  }
 						
 		  echo '</div></div></div>';
