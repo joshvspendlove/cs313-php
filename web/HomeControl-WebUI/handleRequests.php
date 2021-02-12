@@ -47,7 +47,7 @@ function update_device($device_data)
 	var_dump($device_data);
 	foreach ($device_data['device_data'] as $device)
 	{
-		$statement = $db->prepare('UPDATE lights SET lightlevel = :lightlevel WHERE deviceid = :deviceid;');
+		$statement = dbConnect()->prepare('UPDATE lights SET lightlevel = :lightlevel WHERE deviceid = :deviceid;');
 		$statement->bindValue(':lightlevel', $device['lightlevel'], PDO::PARAM_INT);
 		$statement->bindValue(':deviceid', $device['deviceid'], PDO::PARAM_INT);
 		$statement->execute();
