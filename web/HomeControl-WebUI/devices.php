@@ -73,13 +73,13 @@
 				
 				foreach(dbConnect()->query("SELECT * FROM locks WHERE systemid = '$systemid';") as $lock)
 				{
-					echo '<div class="row"><div class="col-sm"><h4>' . $lock['lockname'] . '</h4></div><div class="col-sm"><h4>Unlock</h4>' . '<label class="switch"><input type="checkbox" id="' . $lock["deviceid"] .'" onchange="toggleLock(id);" ';
+					echo '<div class="row"><div class="col-sm"><h4>' . $lock['lockname'] . '</h4></div><div class="col-sm"><h4>Unlock - ' . '<label class="switch"><input type="checkbox" id="' . $lock["deviceid"] .'" onchange="toggleLock(id);" ';
 			  if ($lock['lockstate'] == "Locked")
 			  {
 				  echo 'checked';
 			  }
 			  
-			  echo '><span class="slider lock"></span></label><h4>Locked</h4></div></div><hr>';
+			  echo '><span class="slider lock"></span></label> - Locked</h4></div></div><hr>';
 				}
 				
 			  ?>	
