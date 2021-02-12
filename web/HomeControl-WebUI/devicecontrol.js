@@ -17,7 +17,7 @@ function toggleSwitch(id)
 			console.log(this.responseText);
 		}
 	};
-	xhttp.open("POST", "handleRequests.php", true);
+	xhttp.open("POST", "sendRequests.php", true);
 	xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-	xhttp.send('DATA={"request":"update_device","device_data":{"' + id +'":"' + state + '"}}');
+	xhttp.send('command=update_device&deviceid=' + id +'&devicetype=light&state=' + state);
 }
