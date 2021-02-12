@@ -50,13 +50,13 @@
 				
 		  foreach(dbConnect()->query("SELECT * FROM lights WHERE systemid = '$systemid';") as $light)
 		  {
-			  echo $light['lightname'] . " - " . $light['lightlevel'] . '<label class="switch"><input type="checkbox" id="' . $light["deviceid"] .'" onchange="toggleSwitch(id); ';
+			  echo $light['lightname'] . " - " . $light['lightlevel'] . '<label class="switch"><input type="checkbox" id="' . $light["deviceid"] .'" onchange="toggleSwitch(id);" ';
 			  if ($light['lightlevel'] > 0)
 			  {
 				  echo 'checked';
 			  }
 			  
-			  echo '"><span class="slider"></span></label><hr>';
+			  echo '><span class="slider"></span></label><hr>';
 		  }
 						
 		  echo '</div></div></div>';
