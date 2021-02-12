@@ -17,7 +17,7 @@
 					$data['lightlevel'] = '0';
 				}
 				//$device = json_decode($data, true);
-				$data = array('device' => $data);
+				$data = json_decode(array('device' => $data));
 				update_device($data);
 				var_dump($data);
 			}				
