@@ -70,3 +70,11 @@ input:checked + .slider.lock {
 .col {
   text-align: center;
 }
+
+.lightstate {
+  font-size: 50px;
+}
+
+.lockstate {
+  font-size: 50px;	
+}
