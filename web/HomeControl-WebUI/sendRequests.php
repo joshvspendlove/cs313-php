@@ -1,7 +1,7 @@
 <?php
 	include './handleRequests.php';
 	
-	if (isset($_POST['command'])
+	if (isset($_POST['command']))
 	{
 		if (htmlspecialchars($_POST['command']) == 'update_device')
 		{
@@ -20,5 +20,6 @@
 				update_device($data);
 			}				
 		}
+	}
 
 ?>
