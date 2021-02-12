@@ -43,7 +43,7 @@ function add_device()
 
 function update_device($device_data)
 {
-	echo 'update_device()\n';
+	echo 'update_device()';
 	var_dump($device_data);
 	foreach ($device_data as $device)
 	{
