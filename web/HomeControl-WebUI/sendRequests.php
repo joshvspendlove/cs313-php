@@ -5,7 +5,7 @@
 	{
 		if (htmlspecialchars($_POST['DATA']) == 'update_device')
 		{
-			$data = array('deviceid' => $_POST['deviceid']);
+			$data = array('deviceid' => htmlspecialchars($_POST['deviceid']));
 			if ($_POST['devicetype'] == 'light')
 			{
 				if ($_POST['state'] == 'On')

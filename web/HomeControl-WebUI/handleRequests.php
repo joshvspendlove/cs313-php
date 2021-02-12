@@ -17,6 +17,7 @@ if (isset($_POST['DATA']))
 
 		case 'update_device':
 			 $device_data = $data['device_data'];
+			 var_dump($device_data);
 			 update_device($device_data);
 		     break;
 
