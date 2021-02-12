@@ -1,5 +1,5 @@
 <?php
-	include './handleRequests.php';
+	
 	
 	if (isset($_POST['DATA']))
 	{
@@ -18,9 +18,11 @@
 				}
 				//$device = json_decode($data, true);
 				$_POST['DATA'] = array('device_data' => array('device' => $data));
-				update_device($_POST['DATA']);
+				//update_device($_POST['DATA']);
 			}				
 		}
 	}
+	
+	include './handleRequests.php';
 
 ?>
