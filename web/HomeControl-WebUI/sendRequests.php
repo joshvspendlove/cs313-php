@@ -18,7 +18,7 @@
 				}
 				//$device = json_decode($data, true);
 				$_POST['DATA'] = array('device_data' => array('device' => $data));
-				update_device($data);
+				update_device($_POST['DATA']);
 			}				
 		}
 	}
