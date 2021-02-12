@@ -8,13 +8,13 @@
 			$data = array('deviceid' => htmlspecialchars($_POST['deviceid']));
 			if ($_POST['devicetype'] == 'light')
 			{
-				if ($_POST['state'] == 'true')
+				if ($_POST['state'] == 'On')
 				{
-					$data['lightlevel'] = 100;
+					$data['lightlevel'] = '100';
 				}
 				else
 				{
-					$data['lightlevel'] = 0;
+					$data['lightlevel'] = '0';
 				}
 				$_POST['DATA'] = array('device_data' => json_decode($data, true));
 				update_device($data);
