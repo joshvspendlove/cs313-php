@@ -17,7 +17,7 @@ if (isset($_POST['DATA']))
 
 		case 'update_device':
 			 $device_data = $data['device_data'];
-			 echo $device_data;
+			 
 			 update_device($device_data);
 		     break;
 
@@ -43,7 +43,8 @@ function add_device()
 
 function update_device($device_data)
 {
-	echo 'update_device()';
+	echo 'update_device()<br>';
+	echo $device_data;
 	foreach ($device_data as $device)
 	{
 		echo $device['deviceid'] . '-' . $device['lightlevel'];
