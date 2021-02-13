@@ -61,7 +61,7 @@ function update_device($systemid, $device_data)
 		$statement = dbConnect()->prepare('UPDATE lights SET lightlevel = :lightlevel WHERE deviceid = :deviceid AND systemid = :systemid;');
 		$statement->bindValue(':lightlevel', $device['lightlevel'], PDO::PARAM_INT);
 		$statement->bindValue(':deviceid', $device['deviceid'], PDO::PARAM_INT);
-		$statement->bindValue(':systemid', $_SESSION['systemid'], PDO::PARAM_INT);
+		$statement->bindValue(':systemid', $systemid, PDO::PARAM_INT);
 		$statement->execute();
 		
 		foreach(dbConnect()->query('SELECT lightlevel from lights WHERE deviceid = ' . $device["deviceid"] . ' AND systemid = ' . $systemid . ';') as $row)
@@ -77,7 +77,7 @@ function update_device($systemid, $device_data)
 		$statement = dbConnect()->prepare('UPDATE locks SET lockstate = :lockstate WHERE deviceid = :deviceid AND systemid = :systemid;');
 		$statement->bindValue(':lockstate', $device['lockstate'], PDO::PARAM_INT);
 		$statement->bindValue(':deviceid', $device['deviceid'], PDO::PARAM_INT);
-		$statement->bindValue(':systemid', $_SESSION['systemid'], PDO::PARAM_INT);
+		$statement->bindValue(':systemid', $systemid, PDO::PARAM_INT);
 		$statement->execute();
 			
 		foreach(dbConnect()->query('SELECT lockstate from locks WHERE deviceid = ' . $device["deviceid"] . ' AND systemid = ' . $systemid . ';') as $row)
