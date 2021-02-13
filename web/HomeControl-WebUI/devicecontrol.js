@@ -14,7 +14,7 @@ function toggleLight(id)
 	{
 		if (this.readyState == 4 && this.status == 200) 
 		{
-			console.log(this.responseText);
+			document.getElementById('lightstate' +id).innerHTML = this.responseText;
 		}
 	};
 	xhttp.open("POST", "sendRequests.php", true);
@@ -38,7 +38,7 @@ function toggleLock(id)
 	{
 		if (this.readyState == 4 && this.status == 200) 
 		{
-			console.log(this.responseText);
+			document.getElementById('lockstate' +id).innerHTML = this.responseText;
 		}
 	};
 	xhttp.open("POST", "sendRequests.php", true);

@@ -27,14 +27,10 @@ if (isset($_POST['DATA']))
 
 	}
 }
-else
-{
-	echo 'Request Failed';
-}
+
 
 function add_device()
 {
-	echo 'add_device()';
 	foreach ($new_devices as $device)
 	{
 		
@@ -43,14 +39,21 @@ function add_device()
 
 function update_device($device_data)
 {
-	echo 'update_device()';
 	var_dump($device_data);
 	foreach ($device_data['device_data'] as $device)
 	{
-		$statement = dbConnect()->prepare('UPDATE lights SET lightlevel = :lightlevel WHERE deviceid = :deviceid;');
-		$statement->bindValue(':lightlevel', $device['lightlevel'], PDO::PARAM_INT);
-		$statement->bindValue(':deviceid', $device['deviceid'], PDO::PARAM_INT);
-		$statement->execute();
+		if ($device['devicetype'] == 'light')
+		{
+			$statement = dbConnect()->prepare('UPDATE lights SET lightlevel = :lightlevel WHERE deviceid = :deviceid;');
+			$statement->bindValue(':lightlevel', $device['lightlevel'], PDO::PARAM_INT);
+			$statement->bindValue(':deviceid', $device['deviceid'], PDO::PARAM_INT);
+			$statement->execute();
+			
+			if ($device['ligh'] > 0)
+				echo 'On';
+			else
+				echo 'Off';
+		}
 	}
 }
 
