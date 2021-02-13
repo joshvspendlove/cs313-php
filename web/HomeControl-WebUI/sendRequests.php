@@ -18,7 +18,7 @@
 				}
 				//$device = json_decode($data, true);
 				$_POST['DATA'] = json_encode(array("request" => 'update_device', "device_data" => json_encode(array('device' => $data))));
-				$_POST['DATA'] = json_encode($_POST['DATA']);
+				//$_POST['DATA'] = json_encode($_POST['DATA']);
 				include './handleRequests.php';
 				
 			}				
