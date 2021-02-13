@@ -1,6 +1,6 @@
 <?php
 include './ConnectDB.php';
-//var_dump($_POST);
+
 
 if (isset($_POST['DATA']))
 {
@@ -39,7 +39,6 @@ function add_device()
 
 function update_device($device_data)
 {
-	var_dump($device_data);
 	foreach ($device_data['device_data'] as $device)
 	{
 		if ($device['devicetype'] == 'light')
@@ -49,7 +48,7 @@ function update_device($device_data)
 			$statement->bindValue(':deviceid', $device['deviceid'], PDO::PARAM_INT);
 			$statement->execute();
 			
-			if ($device['ligh'] > 0)
+			if ($device['lightlevel'] > 0)
 				echo 'On';
 			else
 				echo 'Off';
