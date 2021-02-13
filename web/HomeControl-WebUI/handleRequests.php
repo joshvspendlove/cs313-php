@@ -51,7 +51,7 @@ function add_device($systemid, $devices)
 	{
 		if ($device['devicetype'] == 'light')
 		{
-			$statement = dbConnect()->prepare('INSERT INTO lights (lightname, lightlevel, systemid, deviceid) VALUES (:lightname, :lightlevel, :systemid, :deviceid);');
+			$statement = dbConnect()->prepare('INSERT INTO lights (lightname, lightlevel, systemid, deviceid) VALUES (:lightname, :lightlevel, :systemid, :deviceid) ON CONFLICT WHERE (SELECT lightname FROM lights WHERE systemid = :systemid AND deviceid = :deviceid) IS NOT NULL DO NOTHING;');
 			$statement->bindValue(':lightname', $device['lightname'], PDO::PARAM_STR);
 			$statement->bindValue(':lightlevel', $device['lightlevel'], PDO::PARAM_INT);
 			$statement->bindValue(':systemid', $systemid, PDO::PARAM_INT);
@@ -99,7 +99,6 @@ function update_device($systemid, $device_data)
 
 function get_device_state($systemid)
 {
-	echo 'get_device_state()';
 	$deviceData = array();
 	
 	$lights = array();
