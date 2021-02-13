@@ -49,7 +49,7 @@ function add_device($systemid, $device)
 {
 	foreach ($device)
 	{
-		var_dump($device)
+		var_dump($device);
 	}
 }
 
