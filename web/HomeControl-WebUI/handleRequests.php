@@ -13,7 +13,7 @@ if (isset($_POST['DATA']))
 		$systemid = $_SESSION['systemid'];
 	elseif ($data['username'] != null and $data['password'] != null)
 	{
-		foreach(dbConnect()->query('SELECT systemid from users WHERE username = $data["username"] AND userpass = $data["password"];') as $row)
+		foreach(dbConnect()->query('SELECT systemid from users WHERE username = ' .$data["username"] . ' AND userpass = ' . $data["password"] . ';') as $row)
 		{
 			$systemid = $row['systemid'];
 		}
