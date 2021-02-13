@@ -45,15 +45,15 @@ function update_device($device_data)
 {
 	$device_data = json_encode($device_data);
 	var_dump($device_data);
-		
-	if ($device_data['devicetype'] == 'light')
+	$device = $device_data[0];
+	if ($device['devicetype'] == 'light')
 		{
 			$statement = dbConnect()->prepare('UPDATE lights SET lightlevel = :lightlevel WHERE deviceid = :deviceid;');
-			$statement->bindValue(':lightlevel', $device_data['lightlevel'], PDO::PARAM_INT);
-			$statement->bindValue(':deviceid', $device_data['deviceid'], PDO::PARAM_INT);
+			$statement->bindValue(':lightlevel', $device['lightlevel'], PDO::PARAM_INT);
+			$statement->bindValue(':deviceid', $device['deviceid'], PDO::PARAM_INT);
 			$statement->execute();
 			
-			if ($device_data['lightlevel'] > 0)
+			if ($device['lightlevel'] > 0)
 				echo 'On';
 			else
 				echo 'Off';
