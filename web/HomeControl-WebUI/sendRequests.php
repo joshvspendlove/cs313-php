@@ -1,5 +1,4 @@
 <?php
-	include './handleRequests.php';
 	
 	if (isset($_POST['DATA']))
 	{
@@ -20,6 +19,7 @@
 				$_POST['DATA'] = array("request" => 'update_device', "device_data" => array('device' => $data, "devicetype" => 'light'));
 				$_POST['DATA']['request'] = 'update_device';
 				//update_device($_POST['DATA']);
+				include './handleRequests.php';
 				
 			}				
 		}
