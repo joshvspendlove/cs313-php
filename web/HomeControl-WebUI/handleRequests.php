@@ -45,7 +45,7 @@ function update_device($device_data)
 {
 	foreach ($device_data['device'] as $device)
 	{
-		$device = json_encode($device);
+		//$device = json_encode($device);
 		var_dump($device);
 		if ($device['devicetype'] == 'light')
 		{
