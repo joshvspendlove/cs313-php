@@ -58,7 +58,7 @@ function update_device($device_data)
 			else
 				echo 'Off';
 		}
-	}
+	
 }
 
 function get_device_state($systemid)
