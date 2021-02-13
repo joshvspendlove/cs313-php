@@ -7,7 +7,7 @@
 			$data = array('deviceid' => htmlspecialchars($_POST['deviceid']));
 			if ($_POST['devicetype'] == 'light')
 			{
-				$data["devicetype"] = 'light';
+				$data['devicetype'] = 'light';
 				if ($_POST['state'] == 'On')
 				{
 					$data['lightlevel'] = '100';

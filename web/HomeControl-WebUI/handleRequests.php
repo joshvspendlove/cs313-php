@@ -5,6 +5,7 @@ include './SessionController.php';
 if (isset($_POST['DATA']))
 {
 	$data = json_decode($_POST['DATA'], true);
+	var_dump($data);
 	if ($data['systemid'] != null)
 		$systemid = $data['systemid'];
 	else
@@ -45,7 +46,7 @@ function update_device($device_data)
 	foreach ($device_data['device'] as $device)
 	{
 		$device = json_decode($device);
-		var_dump($device);
+		
 		if ($device['devicetype'] == 'light')
 		{
 			$statement = dbConnect()->prepare('UPDATE lights SET lightlevel = :lightlevel WHERE deviceid = :deviceid;');
