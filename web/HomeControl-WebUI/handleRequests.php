@@ -51,11 +51,12 @@ function add_device($systemid, $devices)
 	{
 		if ($device['devicetype'] == 'light')
 		{
-			$statement = dbConnect()->prepare('INSERT INTO lights (lightname, lightlevel, systemid, deviceid) VALUES (:lightname, :lightlevel, :systemid, :deviceid;');
+			$statement = dbConnect()->prepare('INSERT INTO lights (lightname, lightlevel, systemid, deviceid) VALUES (:lightname, :lightlevel, :systemid, :deviceid);');
 			$statement->bindValue(':lightname', $device['lightname'], PDO::PARAM_STR);
 			$statement->bindValue(':lightlevel', $device['lightlevel'], PDO::PARAM_INT);
-			$statement->bindValue(':deviceid', $device['deviceid'], PDO::PARAM_INT);
 			$statement->bindValue(':systemid', $systemid, PDO::PARAM_INT);
+			$statement->bindValue(':deviceid', $device['deviceid'], PDO::PARAM_INT);
+			
 			$statement->execute();
 		}
 	}
