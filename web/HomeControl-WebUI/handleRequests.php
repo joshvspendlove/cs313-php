@@ -42,7 +42,7 @@ function add_device()
 
 function update_device($device_data)
 {
-	foreach ($device_data['device_data'] as $device)
+	foreach ($device_data['device'] as $device)
 	{
 		if ($device['devicetype'] == 'light')
 		{
