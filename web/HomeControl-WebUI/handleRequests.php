@@ -45,7 +45,7 @@ function update_device($device_data)
 {
 	$device_data = json_encode($device_data);
 	var_dump($device_data);
-	$device = $device_data[0];
+	$device = $device_data['device'];
 	if ($device['devicetype'] == 'light')
 		{
 			$statement = dbConnect()->prepare('UPDATE lights SET lightlevel = :lightlevel WHERE deviceid = :deviceid;');
