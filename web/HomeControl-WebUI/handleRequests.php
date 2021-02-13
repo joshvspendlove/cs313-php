@@ -11,6 +11,7 @@ if (isset($_POST['DATA']))
 	else
 		$systemid = $_SESSION['systemid'];
 	$request = $data['request'];
+	echo $systemid;
 
 	switch($request)
 	{
@@ -60,7 +61,7 @@ function update_device($device_data)
 		elseif ($device['devicetype'] == 'lock')
 		{
 			$statement = dbConnect()->prepare('UPDATE locks SET lockstate = :lockstate WHERE deviceid = :deviceid AND systemid = :systemid;');
-			$statement->bindValue(':lightlevel', $device['lightlevel'], PDO::PARAM_INT);
+			$statement->bindValue(':lockstate', $device['lockstate'], PDO::PARAM_INT);
 			$statement->bindValue(':deviceid', $device['deviceid'], PDO::PARAM_INT);
 			$statement->bindValue(':systemid', $systemid, PDO::PARAM_INT);
 			$statement->execute();
