@@ -45,9 +45,9 @@ if (isset($_POST['DATA']))
 }
 
 
-function add_device($systemid, $device)
+function add_device($systemid, $devices)
 {
-	foreach ($device)
+	foreach ($devices as $device)
 	{
 		var_dump($device);
 	}
