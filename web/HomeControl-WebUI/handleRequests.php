@@ -5,8 +5,9 @@ include './SessionController.php';
 if (isset($_POST['DATA']))
 {
 	$data = json_decode($_POST['DATA'], true);
-	$systemid = $data['systemid'];
-	if ($systemid == null)
+	if ($data['systemid'] != null)
+		$systemid = $data['systemid'];
+	else
 		$systemid = $_SESSION['systemid'];
 	$request = $data['request'];
 
