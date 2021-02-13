@@ -1,7 +1,7 @@
 <?php
 include './ConnectDB.php';
 include './SessionController.php';
-
+var_dump($_POST);
 if (isset($_POST['DATA']))
 {
 	$data = json_decode($_POST['DATA'], true);
