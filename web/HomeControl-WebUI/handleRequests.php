@@ -64,7 +64,7 @@ function update_device($systemid, $device_data)
 		$statement->bindValue(':systemid', $_SESSION['systemid'], PDO::PARAM_INT);
 		$statement->execute();
 		
-		foreach(dbConnect()->query('SELECT lightlevel from lights WHERE deviceid = $device["deviceid"] AND systemid = $_SESSION["systemid"];') as $row)
+		foreach(dbConnect()->query('SELECT lightlevel from lights WHERE deviceid = ' . $device["deviceid"] . ' AND systemid = ' . $systemid . ';') as $row)
 		{
 			if ($row['lightlevel'] > 0)
 				echo 'On';
@@ -80,7 +80,7 @@ function update_device($systemid, $device_data)
 		$statement->bindValue(':systemid', $_SESSION['systemid'], PDO::PARAM_INT);
 		$statement->execute();
 			
-		foreach(dbConnect()->query('SELECT lockstate from locks WHERE deviceid = $device["deviceid"] AND systemid = $_SESSION["systemid"];') as $row)
+		foreach(dbConnect()->query('SELECT lockstate from locks WHERE deviceid = ' . $device["deviceid"] . ' AND systemid = ' . $systemid . ';') as $row)
 		{
 			echo $row['lockstate'];
 		}
