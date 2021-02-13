@@ -2,27 +2,39 @@
 include './ConnectDB.php';
 include './SessionController.php';
 
+$systemid = 0;
 if (isset($_POST['DATA']))
 {
 	$data = json_decode($_POST['DATA'], true);
 
-	if ($data['systemid'] != null)
+	/*if ($data['systemid'] != null)
 		$systemid = $data['systemid'];
-	else
+	else*/if (isset($_SESSION['systemid'])
 		$systemid = $_SESSION['systemid'];
+	elseif ($data['username'] != null and $data['password'] != null)
+	{
+		foreach(dbConnect()->query('SELECT systemid from users WHERE username = $data["username"] AND userpass = $data["password"];') as $row)
+		{
+			$systemid = $row['systemid'];
+		}
+	}
+	
+	if ($systemid == 0)
+		exit('Invalid System');
+	
 	$request = $data['request'];
 
 	switch($request)
 	{
 		case 'add_device':
 			 $new_devices = $data['new_devices'];
-			 add_device();
+			 add_device($systemid, $new_devices);
 		     break;
 
 		case 'update_device':
 			 $device_data = $data['device_data'];
 			 
-			 update_device($device_data);
+			 update_device($systemid, $device_data);
 		     break;
 
 		case 'get_device_state':
@@ -33,40 +45,46 @@ if (isset($_POST['DATA']))
 }
 
 
-function add_device()
+function add_device($systemid, $device)
 {
-	foreach ($new_devices as $device)
+	foreach ($device)
 	{
-		
+		var_dump($device)
 	}
 }
 
-function update_device($device_data)
+function update_device($systemid, $device_data)
 {
 	$device = $device_data['device'];
 	if ($device['devicetype'] == 'light')
+	{
+		$statement = dbConnect()->prepare('UPDATE lights SET lightlevel = :lightlevel WHERE deviceid = :deviceid AND systemid = :systemid;');
+		$statement->bindValue(':lightlevel', $device['lightlevel'], PDO::PARAM_INT);
+		$statement->bindValue(':deviceid', $device['deviceid'], PDO::PARAM_INT);
+		$statement->bindValue(':systemid', $_SESSION['systemid'], PDO::PARAM_INT);
+		$statement->execute();
+		
+		foreach(dbConnect()->query('SELECT lightlevel from lights WHERE deviceid = $device["deviceid"] AND systemid = $_SESSION["systemid"];') as $row)
 		{
-			$statement = dbConnect()->prepare('UPDATE lights SET lightlevel = :lightlevel WHERE deviceid = :deviceid AND systemid = :systemid;');
-			$statement->bindValue(':lightlevel', $device['lightlevel'], PDO::PARAM_INT);
-			$statement->bindValue(':deviceid', $device['deviceid'], PDO::PARAM_INT);
-			$statement->bindValue(':systemid', $_SESSION['systemid'], PDO::PARAM_INT);
-			$statement->execute();
-			
-			if ($device['lightlevel'] > 0)
+			if ($row['lightlevel'] > 0)
 				echo 'On';
 			else
 				echo 'Off';
 		}
-		elseif ($device['devicetype'] == 'lock')
-		{
-			$statement = dbConnect()->prepare('UPDATE locks SET lockstate = :lockstate WHERE deviceid = :deviceid AND systemid = :systemid;');
-			$statement->bindValue(':lockstate', $device['lockstate'], PDO::PARAM_INT);
-			$statement->bindValue(':deviceid', $device['deviceid'], PDO::PARAM_INT);
-			$statement->bindValue(':systemid', $_SESSION['systemid'], PDO::PARAM_INT);
-			$statement->execute();
+	}
+	elseif ($device['devicetype'] == 'lock')
+	{
+		$statement = dbConnect()->prepare('UPDATE locks SET lockstate = :lockstate WHERE deviceid = :deviceid AND systemid = :systemid;');
+		$statement->bindValue(':lockstate', $device['lockstate'], PDO::PARAM_INT);
+		$statement->bindValue(':deviceid', $device['deviceid'], PDO::PARAM_INT);
+		$statement->bindValue(':systemid', $_SESSION['systemid'], PDO::PARAM_INT);
+		$statement->execute();
 			
-			echo $device['lockstate'];
+		foreach(dbConnect()->query('SELECT lockstate from locks WHERE deviceid = $device["deviceid"] AND systemid = $_SESSION["systemid"];') as $row)
+		{
+			echo $row['lockstate'];
 		}
+	}
 	
 }
 
