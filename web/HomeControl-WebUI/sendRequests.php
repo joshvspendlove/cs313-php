@@ -17,7 +17,7 @@
 					$data['lightlevel'] = '0';
 				}
 				//$device = json_decode($data, true);
-				$_POST['DATA'] = array('request' => 'update_device', 'device_data' => array('device' => $data, 'devicetype' => 'light'));
+				$_POST['DATA'] = array("request" => 'update_device', "device_data" => array('device' => $data, "devicetype" => 'light'));
 				//update_device($_POST['DATA']);
 				
 			}				
