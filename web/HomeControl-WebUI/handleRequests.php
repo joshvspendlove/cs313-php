@@ -43,7 +43,7 @@ function add_device()
 
 function update_device($device_data)
 {
-	$device_data = json_decode($device_data);
+	$device_data = json_encode($device_data);
 	var_dump($device_data);
 	foreach ($device_data['device'] as $device)
 	{
