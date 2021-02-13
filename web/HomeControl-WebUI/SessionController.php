@@ -5,6 +5,9 @@
 		setcookie('sessionid', $sessionid, time() + (86400 * 30), "/HomeControl-WebUI");
 	}
 	
-	session_id($_COOKIE['sessionid']);
-	session_start();
+	if (isset($_COOKIE['sessionid']))
+	{
+		session_id($_COOKIE['sessionid']);
+		session_start();
+	}
 ?>
