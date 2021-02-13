@@ -2,6 +2,8 @@
 include './ConnectDB.php';
 include './SessionController.php';
 
+$systemid = 0;
+
 if (isset($_POST['DATA']))
 {
 	$data = json_decode($_POST['DATA'], true);

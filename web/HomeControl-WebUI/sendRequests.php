@@ -27,11 +27,11 @@
 				$data['devicetype'] = 'lock';
 				if ($_POST['state'] == 'Locked')
 				{
-					$data['lightlevel'] = 'Locked';
+					$data['lockstate'] = 'Locked';
 				}
 				else
 				{
-					$data['lightlevel'] = 'Unlocked';
+					$data['lockstate'] = 'Unlocked';
 				}
 				$_POST['DATA'] = json_encode(array("request" => 'update_device', "device_data" => array('device' => $data)));
 				include './handleRequests.php';
