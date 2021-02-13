@@ -16,12 +16,27 @@
 				{
 					$data['lightlevel'] = '0';
 				}
-				//$device = json_decode($data, true);
+
 				$_POST['DATA'] = json_encode(array("request" => 'update_device', "device_data" => array('device' => $data)));
-				//$_POST['DATA'] = json_encode($_POST['DATA']);
+
 				include './handleRequests.php';
 				
-			}				
+			}
+			else if ($_POST['devicetype'] == 'lock')
+			{
+				$data['devicetype'] = 'lock';
+				if ($_POST['state'] == 'Locked')
+				{
+					$data['lightlevel'] = 'Locked';
+				}
+				else
+				{
+					$data['lightlevel'] = 'Unlocked';
+				}
+				$_POST['DATA'] = json_encode(array("request" => 'update_device', "device_data" => array('device' => $data)));
+				include './handleRequests.php';
+				
+			}			
 		}
 	}
 
