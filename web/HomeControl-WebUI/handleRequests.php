@@ -6,6 +6,8 @@ if (isset($_POST['DATA']))
 {
 	$data = json_decode($_POST['DATA'], true);
 	$systemid = $data['systemid'];
+	if ($systemid == null)
+		$systemid = $_SESSION['systemid'];
 	$request = $data['request'];
 
 	switch($request)
