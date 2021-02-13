@@ -9,7 +9,7 @@ if (isset($_POST['DATA']))
 
 	/*if ($data['systemid'] != null)
 		$systemid = $data['systemid'];
-	else*/if (isset($_SESSION['systemid'])
+	else*/if (isset($_SESSION['systemid']))
 		$systemid = $_SESSION['systemid'];
 	elseif ($data['username'] != null and $data['password'] != null)
 	{
