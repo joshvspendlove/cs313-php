@@ -63,7 +63,7 @@ function add_device($systemid, $devices)
 		{
 			$statement = dbConnect()->prepare('INSERT INTO locks (lockname, lockstate, systemid, deviceid) VALUES (:lockname, :lockstate, :systemid, :deviceid) ON CONFLICT WHERE (SELECT lockname FROM locks WHERE systemid = :systemid AND deviceid = :deviceid) IS NOT NULL DO NOTHING;');
 			$statement->bindValue(':lockname', $device['lockname'], PDO::PARAM_STR);
-			$statement->bindValue(':lockstate', $device['lockstate'], PDO::PARAM_INT);
+			$statement->bindValue(':lockstate', $device['lockstate'], PDO::PARAM_STR);
 			$statement->bindValue(':systemid', $systemid, PDO::PARAM_INT);
 			$statement->bindValue(':deviceid', $device['deviceid'], PDO::PARAM_INT);
 			
