@@ -7,6 +7,7 @@
 			$data = array('deviceid' => htmlspecialchars($_POST['deviceid']));
 			if ($_POST['devicetype'] == 'light')
 			{
+				$data["devicetype"] = 'light';
 				if ($_POST['state'] == 'On')
 				{
 					$data['lightlevel'] = '100';
@@ -16,7 +17,7 @@
 					$data['lightlevel'] = '0';
 				}
 				//$device = json_decode($data, true);
-				$_POST['DATA'] = array("request" => 'update_device', "device_data" => array('device' => $data, "devicetype" => 'light'));
+				$_POST['DATA'] = array("request" => 'update_device', "device_data" => array('device' => $data));
 				$_POST['DATA'] = json_encode($_POST['DATA']);
 				include './handleRequests.php';
 				
