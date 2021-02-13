@@ -2,8 +2,6 @@
 include './ConnectDB.php';
 include './SessionController.php';
 
-$systemid = 0;
-
 if (isset($_POST['DATA']))
 {
 	$data = json_decode($_POST['DATA'], true);
@@ -13,7 +11,6 @@ if (isset($_POST['DATA']))
 	else
 		$systemid = $_SESSION['systemid'];
 	$request = $data['request'];
-	echo $systemid;
 
 	switch($request)
 	{
