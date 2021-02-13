@@ -70,11 +70,3 @@ input:checked + .slider.lock {
 .col {
   text-align: center;
 }
-
-.lightstate {
-  font-weight: bold;
-}
-
-.lockstate {	
-  font-weight: bold;
-}
