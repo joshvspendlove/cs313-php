@@ -48,7 +48,7 @@ if (isset($_POST['DATA']))
 function add_device($systemid, $devices)
 {
 	var_dump($devices);
-	foreach ($devices as $device)
+	foreach ($devices['device'] as $device)
 	{
 		if ($device['devicetype'] == 'light')
 		{
