@@ -51,7 +51,7 @@ function add_device($systemid, $devices)
 	{
 		if ($device['devicetype'] == 'light')
 		{
-			$statement = dbConnect()->prepare('INSERT INTO lights (lightname, lightlevel, systemid, deviceid) VALUES (:lightname, :lightlevel, :systemid, :deviceid) ON CONFLICT DO NOTHING;');
+			$statement = dbConnect()->prepare('INSERT INTO lights (lightname, lightlevel, systemid, deviceid) VALUES (:lightname, :lightlevel, :systemid, :deviceid) ON CONFLICT (light_index) DO NOTHING;');
 			$statement->bindValue(':lightname', $device['lightname'], PDO::PARAM_STR);
 			$statement->bindValue(':lightlevel', $device['lightlevel'], PDO::PARAM_INT);
 			$statement->bindValue(':systemid', $systemid, PDO::PARAM_INT);
@@ -61,7 +61,7 @@ function add_device($systemid, $devices)
 		}
 		elseif ($device['devicetype'] == 'lock')
 		{
-			$statement = dbConnect()->prepare('INSERT INTO locks (lockname, lockstate, systemid, deviceid) VALUES (:lockname, :lockstate, :systemid, :deviceid) ON CONFLICT DO NOTHING;');
+			$statement = dbConnect()->prepare('INSERT INTO locks (lockname, lockstate, systemid, deviceid) VALUES (:lockname, :lockstate, :systemid, :deviceid) ON CONFLICT (lock_index) DO NOTHING;');
 			$statement->bindValue(':lockname', $device['lockname'], PDO::PARAM_STR);
 			$statement->bindValue(':lockstate', $device['lockstate'], PDO::PARAM_STR);
 			$statement->bindValue(':systemid', $systemid, PDO::PARAM_INT);
